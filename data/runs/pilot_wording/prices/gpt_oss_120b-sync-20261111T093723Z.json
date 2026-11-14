@@ -1,0 +1,19 @@
+{
+ "setting": "gpt_oss_120b",
+ "api": "hf",
+ "route": "sync",
+ "model": "openai/gpt-oss-120b:deepinfra",
+ "fetched_at": "2026-11-11T09:35:57+00:00",
+ "source": "cost_model",
+ "provider": "deepinfra",
+ "price_in": 0.037,
+ "price_out": 0.17,
+ "quantization": null,
+ "status": null,
+ "listing_url": null,
+ "listing": null,
+ "endpoint_tag": null,
+ "note": "listing not read (ClientError: ConnectError on GET https://router.huggingface.co/v1/models); the cost model is used",
+ "cost_model_in": 0.037,
+ "cost_model_out": 0.17
+}

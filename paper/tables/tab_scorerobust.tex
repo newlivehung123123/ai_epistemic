@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{4}{c}{Turn-1 Brier} & \multicolumn{4}{c}{Market-arm gain} \\
+Setting & All & No Brazil & No pull & No known & All & No Brazil & No pull & No known \\
+\midrule
+Haiku 5.5 off & .231 & .231 & .225 & .231 & .086 & .090 & .107 & .086 \\
+Haiku 5.5 medium & .215 & .215 & .210 & .215 & .067 & .072 & .087 & .067 \\
+Sonnet 5.5 off & .201 & .201 & .184 & .201 & .043 & .049 & .050 & .043 \\
+gpt-6-luna & .230 & .230 & .226 & .230 & .074 & .079 & .086 & .074 \\
+gemini-3.1-flash-lite & .263 & .261 & .257 & .260 & .130 & .132 & .139 & .131 \\
+mistral-small-2603 & .264 & .266 & .269 & .264 & .115 & .119 & .134 & .116 \\
+deepseek-v4.1-flash & .237 & .236 & .223 & .235 & .080 & .083 & .087 & .083 \\
+qwen3.7-flash & .321 & .320 & .319 & .319 & .164 & .172 & .178 & .162 \\
+glm-5.3-flash & .239 & .240 & .234 & .239 & .081 & .087 & .101 & .080 \\
+gpt-oss-120b & .258 & .257 & .256 & .259 & .124 & .124 & .132 & .125 \\
+llama-4-scout & .258 & .259 & .257 & .258 & .124 & .131 & .146 & .125 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Scores on the resolved retro items after dropping the Brazilian election family, the events in the earlier pull of markets and the items the model claims to know in the probe (Appendix~\ref{app:exposure}). The gain uses the half without the fields.}
+\label{tab:scorerobust}
+\end{table*}

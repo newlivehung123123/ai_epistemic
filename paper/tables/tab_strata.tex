@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{3}{c}{Third of $|p_1-0.5|$} & \multicolumn{3}{c}{Third of $|p_1-t|$} & \multicolumn{2}{c}{Re-draw gap} \\
+Setting & Nearest & Middle & Farthest & Nearest & Middle & Farthest & Below 5 & 5 or more \\
+\midrule
+Haiku 5.5 off & .161 & .140 & .063 & .138 & .132 & .113 & .113 & .142 \\
+Haiku 5.5 medium & .158 & .113 & .046 & .121 & .122 & .088 & .083 & .137 \\
+Sonnet 5.5 off & .108 & .084 & .032 & .083 & .086 & .062 & .061 & .099 \\
+gpt-6-luna & .152 & .125 & .073 & .112 & .133 & .115 & .103 & .127 \\
+gemini-3.1-flash-lite & .275 & .194 & .044 & .176 & .238 & .141 & .137 & .255 \\
+mistral-small-2603 & .225 & .223 & .148 & .217 & .202 & .189 & .198 & .208 \\
+deepseek-v4.1-flash & .199 & .128 & .041 & .140 & .143 & .097 & .092 & .159 \\
+qwen3.7-flash & .255 & .169 & .016 & .187 & .183 & .117 & .101 & .197 \\
+glm-5.3-flash & .197 & .171 & .098 & .157 & .167 & .151 & .126 & .177 \\
+gpt-oss-120b & .288 & .292 & .201 & .252 & .268 & .256 & .258 & .259 \\
+llama-4-scout & .287 & .344 & .185 & .321 & .299 & .290 & .301 & .306 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{$D$ by stratum on the half without the fields. Thirds are cut at the terciles of each setting's own turn-1 probabilities, fixed at the full-sample values. The re-draw gap is $|p_1-p_1'|$ in points, where $p_1'$ is the turn-1 probability of an independent second request.}
+\label{tab:strata}
+\end{table*}

@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccccccc}
+\toprule
+& \multicolumn{4}{c}{Accuracy cost} & \multicolumn{4}{c}{Decision cost (dollars)} & \multicolumn{3}{c}{Caving cost} \\
+Setting & Control & Neutral & Enthus. & Skeptic & Control & Neutral & Enthus. & Skeptic & Mean [CI] & Direction & Size \\
+\midrule
+Haiku 5.5 off & $-.0014$ & $-.0028$ & $-.0069$ & .0160$^{*}$ & 0.00 & $-1.75$ & $-1.64$$^{*}$ & $-0.27$ & .0045 [.0019, .0071] & $-.0010$ & .0056$^{*}$ \\
+Haiku 5.5 medium & .0007 & $-.0082$ & $-.0047$ & .0057 & 0.27 & $-1.20$ & $-0.87$ & $-1.48$ & .0006 [$-.0025$, .0036] & $-.0039$$^{*}$ & .0045$^{*}$ \\
+Sonnet 5.5 off & .0017$^{*}$ & .0019 & .0008 & .0066 & 0.19 & 1.13 & 0.05 & 1.92 & .0037 [.0017, .0058] & .0015 & .0022$^{*}$ \\
+gpt-6-luna & $-.0013$ & $-.0062$ & .0016 & .0132$^{*}$ & $-0.27$ & $-2.19$$^{*}$ & $-0.63$ & $-0.68$ & .0074 [.0029, .0116] & .0008 & .0066$^{*}$ \\
+gemini-3.1-flash-lite & .0071$^{*}$ & .0120$^{*}$ & $-.0018$ & .0024 & $-0.08$ & $-0.41$ & $-0.68$ & $-1.50$ & .0003 [$-.0083$, .0092] & $-.0171$$^{*}$ & .0174$^{*}$ \\
+mistral-small-2603 & .0080 & $-.0062$ & .0057 & .0079 & 0.14 & 0.25 & 5.96$^{*}$ & $-1.28$ & .0068 [.0029, .0106] & $-.0054$$^{*}$ & .0122$^{*}$ \\
+deepseek-v4.1-flash & $-.0001$ & .0050 & $-.0165$$^{*}$ & .0165$^{*}$ & 0.11 & 0.74 & $-0.79$ & $-0.16$ & .0000 [$-.0040$, .0039] & $-.0066$$^{*}$ & .0066$^{*}$ \\
+qwen3.7-flash & .0020 & .0070 & $-.0151$ & .0072 & $-1.04$ & 0.08 & $-0.52$ & 0.41 & $-.0040$ [$-.0149$, .0054] & $-.0174$$^{*}$ & .0134$^{*}$ \\
+glm-5.3-flash & $-.0005$ & $-.0067$ & .0003 & .0035 & $-0.36$ & $-0.28$ & 0.14 & 0.41 & .0019 [$-.0021$, .0057] & $-.0063$$^{*}$ & .0082$^{*}$ \\
+gpt-oss-120b & $-.0008$ & $-.0028$ & $-.0202$ & .0320$^{*}$ & $-0.44$ & 0.55 & 0.08 & 1.80 & .0059 [$-.0013$, .0127] & $-.0147$$^{*}$ & .0206$^{*}$ \\
+llama-4-scout & .0082 & .0204$^{*}$ & $-.0110$ & .0349$^{*}$ & $-1.04$ & $-3.61$ & 1.50 & $-3.25$ & .0119 [.0057, .0179] & $-.0147$$^{*}$ & .0266$^{*}$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Costs of turn-2 replies on the resolved retro items without the fields. Accuracy cost is the Brier score of $p_2$ minus the Brier score of $p_1$, and decision cost is the payoff of the turn-1 decision minus the payoff of the turn-2 decision, so positive values are losses. Neutral is the arm that asks the model to take another look. Caving cost is the mean accuracy cost of the enthusiast and skeptic replies, split into a direction term $(p_1-y)(\delta_e-\delta_s)$ and a size term $(\delta_e^2+\delta_s^2)/2$, where $\delta$ is the move of each reply. A star marks an estimate whose 95 percent bootstrap interval excludes 0.}
+\label{tab:costs}
+\end{table*}

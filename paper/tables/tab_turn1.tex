@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccccc}
+\toprule
+Setting & \begin{tabular}[b]{@{}c@{}}Brier\\\relax [CI]\end{tabular} & BSS base & \begin{tabular}[b]{@{}c@{}}BSS\\\relax market\end{tabular} & Log loss & AUC & MCB & DSC & $U$ & \begin{tabular}[b]{@{}c@{}}$U-U_{\mathrm{own}}$\\\relax [CI]\end{tabular} \\
+\midrule
+Haiku 5.5 off & .231 [.207, .256] & 0.023 & $-0.75$ & 0.668 & .670 & .023 & .029 & 4.68 & $-0.77$ [$-1.74$, 0.09] \\
+Haiku 5.5 medium & .215 [.189, .241] & 0.093 & $-0.62$ & 0.636 & .713 & .016 & .038 & 6.70 & 0.14 [0.00, 0.43] \\
+Sonnet 5.5 off & .201 [.176, .226] & 0.151 & $-0.51$ & 0.589 & .749 & .012 & .047 & 9.28 & $-0.14$ [$-0.97$, 0.66] \\
+gpt-6-luna & .230 [.205, .255] & 0.029 & $-0.74$ & 0.684 & .669 & .021 & .028 & 4.05 & $-0.57$ [$-1.56$, 0.33] \\
+gemini-3.1-flash-lite & .263 [.229, .298] & $-0.113$ & $-0.99$ & 0.868 & .643 & .046 & .019 & 1.95 & $-0.86$ [$-2.09$, 0.25] \\
+mistral-small-2603 & .264 [.241, .288] & $-0.117$ & $-1.00$ & 0.763 & .555 & .033 & .005 & $-1.24$ & $-4.44$ [$-7.31$, $-1.77$] \\
+deepseek-v4.1-flash & .237 [.205, .269] & 0.000 & $-0.79$ & 0.760 & .702 & .035 & .035 & 4.71 & $-1.37$ [$-2.76$, $-0.09$] \\
+qwen3.7-flash & .321 [.287, .355] & $-0.355$ & $-1.43$ & 1.073 & .539 & .087 & .003 & 0.19 & $-0.52$ [$-1.89$, 0.79] \\
+glm-5.3-flash & .239 [.209, .271] & $-0.009$ & $-0.79$ & 0.704 & .682 & .033 & .031 & 5.39 & $-1.00$ [$-2.10$, $-0.09$] \\
+gpt-oss-120b & .258 [.235, .281] & $-0.089$ & $-0.95$ & 0.747 & .563 & .028 & .007 & 2.92 & $-0.29$ [$-1.19$, 0.48] \\
+llama-4-scout & .258 [.237, .278] & $-0.088$ & $-0.95$ & 0.749 & .547 & .027 & .006 & $-6.66$ & $-11.36$ [$-14.72$, $-8.06$] \\
+\addlinespace
+Market price at $F$ & .132 [.111, .154] & 0.441 & -- & 0.414 & .886 & .010 & .114 & 12.21 & -- \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Turn-1 forecasts on the 359 resolved retro questions. Brier is the mean squared error of the probability, where 0 is perfect and a constant 0.5 scores 0.25. BSS is the Brier skill score against the base rate of the outcomes and against the market price at the forecast date $F$. Log loss uses the natural logarithm with probabilities clipped to [0.01, 0.99]. MCB (miscalibration) and DSC (discrimination) come from the CORP decomposition, Brier = MCB $-$ DSC + UNC, with UNC = 0.237 for the 359 resolved retro questions. $U$ is the mean payoff in US dollars per question of the stated decision to prepare, and $U_{\mathrm{own}}$ is the payoff of preparing whenever the model's own probability reaches the cost threshold. Brackets give 95 percent bootstrap intervals over events. Sonnet 5.5 off has 356 scored questions, deepseek-v4.1-flash and gpt-oss-120b have 358 and glm-5.3-flash has 355, because the other turn-1 replies of Sonnet 5.5 off, deepseek-v4.1-flash, gpt-oss-120b and glm-5.3-flash were not usable. Preparing for every question loses 11.64 dollars per question, and an oracle that prepares only for questions that resolve Yes earns 19.47 dollars.}
+\label{tab:turn1}
+\end{table*}

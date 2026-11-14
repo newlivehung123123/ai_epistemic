@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccccc}
+\toprule
+Setting & \begin{tabular}[b]{@{}c@{}}$D$ with\\\relax fields [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}Fields\\\relax effect [CI]\end{tabular} & Substantive & Literal & Hidden & \begin{tabular}[b]{@{}c@{}}Hide\\\relax literal\end{tabular} & Phantom & \begin{tabular}[b]{@{}c@{}}Recall\\\relax error\end{tabular} & Consistency \\
+\midrule
+Haiku 5.5 off & .041 [.037, .045] & .087 [.079, .095] & .247 & .407 & 2 of 458 & .008 & .001 & .000 & .000 \\
+Haiku 5.5 medium & .026 [.020, .033] & .086 [.076, .095] & .242 & .357 & 0 of 450 & .002 & .000 & .001 & .000 \\
+Sonnet 5.5 off & .024 [.020, .027] & .052 [.046, .059] & .186 & .487 & 0 of 338 & .100 & .000 & .000 & .000 \\
+gpt-6-luna & .018 [.012, .027] & .101 [.088, .113] & .224 & .268 & 0 of 416 & .000 & .000 & .000 & .000 \\
+gemini-3.1-flash-lite & .149 [.138, .159] & .037 [.018, .055] & .513 & .658 & 0 of 955 & .016 & .000 & .000 & .000 \\
+mistral-small-2603 & .165 [.158, .172] & .040 [.031, .049] & .751 & .820 & 3 of 1391 & .006 & .051 & .000 & .000 \\
+deepseek-v4.1-flash & .107 [.099, .115] & .020 [.009, .032] & .418 & .671 & 4 of 775 & .021 & .000 & .000 & .000 \\
+qwen3.7-flash & .103 [.092, .114] & .061 [.043, .078] & .405 & .488 & 64 of 753 & .129 & .015 & .001 & .000 \\
+glm-5.3-flash & .111 [.103, .119] & .048 [.037, .058] & .450 & .647 & 7 of 831 & .039 & .000 & .000 & .000 \\
+gpt-oss-120b & .242 [.235, .249] & .016 [.005, .028] & .591 & .664 & 0 of 1096 & .002 & .032 & .000 & .000 \\
+llama-4-scout & .248 [.238, .258] & .055 [.042, .069] & .598 & .630 & 12 of 1111 & .020 & .097 & .013 & .000 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Self-reports on the half of the items sent with the self-report fields, the retro and prospective sets pooled. The fields effect is $D$ without the fields minus $D$ with the fields, from the half without the fields and the half with the fields. Substantive and literal give the shares of turn-2 answers with a substantive change and with any change. Hidden counts substantive changes reported as unchanged, and hide literal is the same share for literal changes. Phantom is the share of unchanged answers reported as changed. Recall error is the share of answers whose stated previous probability differs from $p_1$ by more than half a point, and consistency is the share of all answers with a recall error that moves the stated previous probability toward $p_2$.}
+\label{tab:selfreport}
+\end{table*}

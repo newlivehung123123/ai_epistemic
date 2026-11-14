@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccccc}
+\toprule
+Setting & \begin{tabular}[b]{@{}c@{}}Re-draw\\\relax gap [CI]\end{tabular} & Gap 5+ & \begin{tabular}[b]{@{}c@{}}Control\\\relax move\end{tabular} & \begin{tabular}[b]{@{}c@{}}Control $-$\\\relax re-draw [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}Noise\\\relax threshold\end{tabular} & \begin{tabular}[b]{@{}c@{}}Noise\\\relax changes\end{tabular} & \begin{tabular}[b]{@{}c@{}}Coherent\\\relax enthusiast\end{tabular} & \begin{tabular}[b]{@{}c@{}}Coherent\\\relax skeptic\end{tabular} \\
+\midrule
+Haiku 5.5 off & .071 [.063, .080] & .535 & .004 & $-.067$ [$-.080$, $-.055$] & .170 & .152 & .990 & .997 \\
+Haiku 5.5 medium & .064 [.057, .072] & .515 & .010 & $-.058$ [$-.068$, $-.048$] & .150 & .166 & 1.000 & .997 \\
+Sonnet 5.5 off & .054 [.047, .060] & .397 & .007 & $-.043$ [$-.051$, $-.035$] & .130 & .123 & 1.000 & .990 \\
+gpt-6-luna & .091 [.081, .102] & .643 & .002 & $-.092$ [$-.107$, $-.077$] & .200 & .202 & 1.000 & 1.000 \\
+gemini-3.1-flash-lite & .064 [.056, .073] & .419 & .018 & $-.049$ [$-.063$, $-.036$] & .150 & .264 & .971 & .961 \\
+mistral-small-2603 & .107 [.097, .117] & .704 & .053 & $-.055$ [$-.069$, $-.042$] & .250 & .284 & .681 & .845 \\
+deepseek-v4.1-flash & .110 [.098, .123] & .540 & .008 & $-.106$ [$-.124$, $-.089$] & .270 & .126 & .968 & .948 \\
+qwen3.7-flash & .150 [.134, .166] & .650 & .049 & $-.118$ [$-.143$, $-.092$] & .450 & .151 & .942 & .955 \\
+glm-5.3-flash & .103 [.092, .114] & .621 & .009 & $-.096$ [$-.112$, $-.081$] & .266 & .154 & .984 & .964 \\
+gpt-oss-120b & .021 [.016, .026] & .133 & .021 & $-.007$ [$-.016$, .001] & .070 & .572 & .919 & .987 \\
+llama-4-scout & .073 [.065, .081] & .498 & .042 & $-.028$ [$-.039$, $-.017$] & .200 & .470 & .668 & .800 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Re-asking and noise. The re-draw gap is the mean of $|p_1-p_1'|$ between two independent turn-1 requests, and gap 5+ is the share of items where the gap reaches five points. Control move is the mean of $|p_2-p_1|$ when the request is repeated within the conversation with no other line. The noise threshold is the 90th percentile of the re-draw gap, and noise changes is the share of turn-2 replies that move at least as far as the noise threshold or change the decision. Coherent enthusiast and coherent skeptic give the share of coherent turn-2 decisions. Turn-2 columns use the half without the fields.}
+\label{tab:reask}
+\end{table*}

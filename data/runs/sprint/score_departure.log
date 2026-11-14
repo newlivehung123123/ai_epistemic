@@ -1,0 +1,14 @@
+/Users/newlivehung/Desktop/23. AI x Epistemics Sprint/data/runs/sprint/analysis_describe.json
+/Users/newlivehung/Desktop/23. AI x Epistemics Sprint/data/runs/sprint/analysis_score.json
+haiku_off            D 0.128065 ci95 [0.120687, 0.135227] H2 passes False
+haiku_medium         D 0.111595 ci95 [0.104075, 0.118808] H2 passes False
+sonnet_off           D 0.07644 ci95 [0.070944, 0.081878] H2 passes False
+gpt6luna             D 0.119196 ci95 [0.10894, 0.129684] H2 passes False
+gemini_flash_lite    D 0.185183 ci95 [0.168996, 0.201411] H2 passes False
+mistral_small        D 0.204871 ci95 [0.198245, 0.211487] H2 passes False
+deepseek_flash       D 0.127476 ci95 [0.118416, 0.136749] H2 passes False
+qwen_flash           D 0.16356 ci95 [0.148964, 0.178068] H2 passes False
+glm_flash            D 0.15849 ci95 [0.150415, 0.166575] H2 passes False
+gpt_oss_120b         D 0.258522 ci95 [0.248817, 0.268335] H2 passes False
+llama4_scout         D 0.303387 ci95 [0.292747, 0.313962] H2 passes False
+haiku_off_stub       D 0.016667 ci95 [0.003478, 0.033077] H2 passes False

@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcrcrcccc}
+\toprule
+Setting & $w_m$ [CI] & $n$ & $w_h$ [CI] & $n$ & $S$ shared & $w^*$ all & \begin{tabular}[b]{@{}c@{}}$w^*$\\\relax same items\end{tabular} & \begin{tabular}[b]{@{}c@{}}$w_m-w^*$\\\relax [CI]\end{tabular} \\
+\midrule
+Haiku 5.5 off & 0.893 [0.859, 0.919] & 210 & 0.189 [0.147, 0.239] & 210 & 0.704 & 1.115 & 1.067 & $-0.179$ [$-0.388$, 0.034] \\
+Haiku 5.5 medium & 0.870 [0.811, 0.913] & 198 & 0.244 [0.186, 0.312] & 199 & 0.625 & 1.138 & 1.063 & $-0.172$ [$-0.396$, 0.065] \\
+Sonnet 5.5 off & 0.777 [0.697, 0.844] & 183 & 0.191 [0.155, 0.234] & 183 & 0.587 & 1.084 & 0.987 & $-0.194$ [$-0.479$, 0.096] \\
+gpt-6-luna & 0.954 [0.900, 0.994] & 203 & 0.770 [0.671, 0.862] & 203 & 0.184 & 1.088 & 1.008 & $-0.096$ [$-0.309$, 0.124] \\
+gemini-3.1-flash-lite & 0.883 [0.796, 0.962] & 202 & 0.705 [0.596, 0.821] & 202 & 0.178 & 1.157 & 1.151 & $-0.250$ [$-0.411$, $-0.090$] \\
+mistral-small-2603 & 0.879 [0.828, 0.925] & 254 & 0.680 [0.605, 0.752] & 254 & 0.199 & 1.116 & 1.060 & $-0.173$ [$-0.323$, $-0.019$] \\
+deepseek-v4.1-flash & 0.888 [0.814, 0.950] & 195 & 0.750 [0.668, 0.821] & 195 & 0.138 & 1.039 & 0.969 & $-0.092$ [$-0.307$, 0.134] \\
+qwen3.7-flash & 0.884 [0.811, 0.949] & 212 & 0.425 [0.335, 0.520] & 212 & 0.459 & 1.085 & 1.049 & $-0.146$ [$-0.295$, 0.007] \\
+glm-5.3-flash & 0.932 [0.869, 0.967] & 205 & 0.693 [0.607, 0.771] & 205 & 0.239 & 1.110 & 1.038 & $-0.130$ [$-0.378$, 0.123] \\
+gpt-oss-120b & 0.946 [0.918, 0.968] & 216 & 0.600 [0.513, 0.688] & 216 & 0.346 & 1.088 & 1.058 & $-0.114$ [$-0.258$, 0.034] \\
+llama-4-scout & 0.988 [0.973, 0.998] & 251 & 0.906 [0.858, 0.949] & 251 & 0.082 & 1.065 & 1.017 & $-0.035$ [$-0.176$, 0.118] \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Weights on a stated number, on the half without the fields. $w_m$ and $w_h$ are the least-squares weights of the move from $p_1$ on the gap between the stated number and $p_1$ in the market and hunch arms, on items where the gap is at least 10 points, so 1 means adopting the number and 0 means ignoring the number. $S$ shared uses the items eligible in the market arm and in the hunch arm. $w^*$ is the weight on the market price with the lowest Brier score, on every resolved retro item and on the resolved retro items used for $w_m$, and the last column compares $w_m$ with $w^*$ on the $w_m$ items.}
+\label{tab:weights}
+\end{table*}

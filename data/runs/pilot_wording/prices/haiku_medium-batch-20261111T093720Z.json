@@ -1,0 +1,19 @@
+{
+ "setting": "haiku_medium",
+ "api": "anthropic",
+ "route": "batch",
+ "model": "claude-haiku-5-5",
+ "fetched_at": "2026-11-11T09:35:51+00:00",
+ "source": "cost_model",
+ "provider": "anthropic",
+ "price_in": 0.05,
+ "price_out": 0.25,
+ "quantization": null,
+ "status": null,
+ "listing_url": null,
+ "listing": null,
+ "endpoint_tag": null,
+ "note": "Anthropic batch prices of design/notes/anthropic_models_and_prices.md (the cost model)",
+ "cost_model_in": 0.05,
+ "cost_model_out": 0.25
+}

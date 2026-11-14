@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{P{0.10}P{0.21}P{0.13}P{0.12}rP{0.13}P{0.08}P{0.08}}
+\toprule
+Setting & Model ID & Thinking or reasoning sent & Developer default & Cap & Route & Released & Stated cutoff \\
+\midrule
+Haiku 5.5 off & \texttt{claude-\allowbreak{}haiku-\allowbreak{}5-\allowbreak{}5} & Thinking disabled & Adaptive, effort medium & 600 & Anthropic, batch & 2026-10-07 & June 2026 \\
+Haiku 5.5 medium & \texttt{claude-\allowbreak{}haiku-\allowbreak{}5-\allowbreak{}5} & Not sent (adaptive) & Adaptive, effort medium & 4000 & Anthropic, batch & 2026-10-07 & June 2026 \\
+Sonnet 5.5 off & \texttt{claude-\allowbreak{}sonnet-\allowbreak{}5-\allowbreak{}5} & Between tools, no tools offered & Adaptive, effort high & 600 & Anthropic, batch & 2026-09-28 & June 2026 \\
+gpt-6-luna & \texttt{openai/\allowbreak{}gpt-\allowbreak{}6-\allowbreak{}luna} & Effort none & On (medium) & 600 & OpenRouter, \texttt{openai} & 2026-09-22 & 18 May 2026 \\
+gemini-3.1-flash-lite & \texttt{google/\allowbreak{}gemini-\allowbreak{}3.1-\allowbreak{}flash-\allowbreak{}lite} & Effort none & On (minimal) & 600 & OpenRouter, \texttt{google-ai-studio} & 2026-05-07 & Not stated \\
+mistral-small-2603 & \texttt{mistralai/\allowbreak{}mistral-\allowbreak{}small-\allowbreak{}2603} & Effort none & Off & 600 & OpenRouter, \texttt{mistral/zdr} & 2026-03-16 & 1 November 2024 \\
+deepseek-v4.1-flash & \texttt{deepseek/\allowbreak{}deepseek-\allowbreak{}v4.1-\allowbreak{}flash} & Effort none & On (high) & 600 & OpenRouter, \texttt{deepinfra/fp8} & 2026-09-10 & Not stated \\
+qwen3.7-flash & \texttt{qwen/\allowbreak{}qwen3.7-\allowbreak{}flash} & Reasoning disabled & On, no effort levels & 4000 & OpenRouter, \texttt{alibaba} & 2026-07-27 & Not stated \\
+glm-5.3-flash & \texttt{z-\allowbreak{}ai/\allowbreak{}glm-\allowbreak{}5.3-\allowbreak{}flash} & Effort low & Required (max) & 4000 & OpenRouter, \texttt{gmicloud/fp8} & 2026-08-26 & Not stated \\
+gpt-oss-120b & \texttt{openai/\allowbreak{}gpt-\allowbreak{}oss-\allowbreak{}120b:\allowbreak{}deepinfra} & Effort low & Required (medium) & 4000 & Hugging Face, DeepInfra & 2025-08-05 & 1 June 2024 \\
+llama-4-scout & \texttt{meta-\allowbreak{}llama/\allowbreak{}Llama-\allowbreak{}4-\allowbreak{}Scout-\allowbreak{}17B-\allowbreak{}16E-\allowbreak{}Instruct:\allowbreak{}deepinfra} & Not sent & No reasoning & 600 & Hugging Face, DeepInfra & 2025-04-05 & August 2024 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Settings as served on 13 November 2026. The cap is the output limit in tokens, thinking or reasoning included. OpenRouter requests named one provider and did not allow routing to another provider, and Hugging Face requests named DeepInfra in the model ID. No request sent a temperature, a tool or a web search. Released gives the release date or the first listing date. Anthropic requests used SDK 0.85.0, and every reply logged the returned model ID and the request date.}
+\label{tab:models}
+\end{table*}

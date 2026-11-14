@@ -1,0 +1,477 @@
+{
+ "run": "pilot",
+ "stub": false,
+ "written": "2026-11-08T01:15:40+00:00",
+ "settings": {
+  "haiku_off": {
+   "records": 850,
+   "results": 850,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.068703,
+   "reported_cost_usd": 0,
+   "input_tokens": 701962,
+   "output_tokens": 134419,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 848,
+    "missing": 2
+   },
+   "kind_status": {
+    "t1:ok": 100,
+    "probe:ok": 50,
+    "t2:ok": 598,
+    "t2_nf:ok": 100,
+    "t2:missing": 2
+   },
+   "flags": {
+    "text_before_object": 3,
+    "text_after_object": 1
+   },
+   "near_miss": {
+    "probability_fraction": 1
+   },
+   "stop_kind": {
+    "normal": 850
+   },
+   "serving_provider": {
+    "None (None)": 850
+   },
+   "model_returned": {
+    "claude-haiku-5-5": 850
+   },
+   "with_thinking": 0
+  },
+  "haiku_medium": {
+   "records": 350,
+   "results": 350,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.054043,
+   "reported_cost_usd": 0,
+   "input_tokens": 275766,
+   "output_tokens": 161017,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 350
+   },
+   "kind_status": {
+    "t1:ok": 50,
+    "t2:ok": 300
+   },
+   "flags": {
+    "fenced": 1
+   },
+   "near_miss": {
+    "probability_fraction": 13,
+    "previous_probability_fraction": 12
+   },
+   "stop_kind": {
+    "normal": 350
+   },
+   "serving_provider": {
+    "None (None)": 350
+   },
+   "model_returned": {
+    "claude-haiku-5-5": 350
+   },
+   "with_thinking": 303
+  },
+  "sonnet_off": {
+   "records": 294,
+   "results": 294,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.466574,
+   "reported_cost_usd": 0,
+   "input_tokens": 219499,
+   "output_tokens": 49415,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 293,
+    "cut": 1
+   },
+   "kind_status": {
+    "t1:ok": 39,
+    "probe:ok": 20,
+    "t1:cut": 1,
+    "t2:ok": 234
+   },
+   "flags": {
+    "text_before_object": 32,
+    "text_after_object": 21
+   },
+   "near_miss": {
+    "probability_fraction": 17,
+    "previous_probability_fraction": 12
+   },
+   "stop_kind": {
+    "normal": 293,
+    "cut": 1
+   },
+   "serving_provider": {
+    "None (None)": 294
+   },
+   "model_returned": {
+    "claude-sonnet-5-5": 294
+   },
+   "with_thinking": 0
+  },
+  "sonnet_high": {
+   "records": 70,
+   "results": 70,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.153627,
+   "reported_cost_usd": 0,
+   "input_tokens": 54032,
+   "output_tokens": 19919,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 70
+   },
+   "kind_status": {
+    "t1:ok": 10,
+    "t2:ok": 60
+   },
+   "flags": {
+    "text_before_object": 4,
+    "text_after_object": 1
+   },
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 70
+   },
+   "serving_provider": {
+    "None (None)": 70
+   },
+   "model_returned": {
+    "claude-sonnet-5-5": 70
+   },
+   "with_thinking": 18
+  },
+  "gpt6luna": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.013711,
+   "reported_cost_usd": 0.013711,
+   "input_tokens": 80610,
+   "output_tokens": 11300,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 160
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 120
+   },
+   "flags": {},
+   "near_miss": {
+    "probability_fraction": 3
+   },
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "OpenAI (reply)": 160
+   },
+   "model_returned": {
+    "openai/gpt-6-luna": 160
+   },
+   "with_thinking": 0
+  },
+  "gemini_flash_lite": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.047571,
+   "reported_cost_usd": 0.047571,
+   "input_tokens": 87126,
+   "output_tokens": 17193,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 160
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 120
+   },
+   "flags": {},
+   "near_miss": {
+    "probability_fraction": 11,
+    "previous_probability_fraction": 6
+   },
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "Google AI Studio (reply)": 160
+   },
+   "model_returned": {
+    "google/gemini-3.1-flash-lite": 160
+   },
+   "with_thinking": 160
+  },
+  "mistral_small": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.018885,
+   "reported_cost_usd": 0.012083,
+   "input_tokens": 84002,
+   "output_tokens": 10474,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 160
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 120
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "Mistral (reply)": 160
+   },
+   "model_returned": {
+    "mistralai/mistral-small-2603": 160
+   },
+   "with_thinking": 0
+  },
+  "deepseek_flash": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.017889,
+   "reported_cost_usd": 0.012692,
+   "input_tokens": 81990,
+   "output_tokens": 15264,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 160
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 120
+   },
+   "flags": {
+    "fenced": 2
+   },
+   "near_miss": {
+    "probability_fraction": 2
+   },
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "DeepInfra (reply)": 160
+   },
+   "model_returned": {
+    "deepseek/deepseek-v4.1-flash": 160
+   },
+   "with_thinking": 0
+  },
+  "qwen_flash": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.004748,
+   "reported_cost_usd": 0.004309,
+   "input_tokens": 87950,
+   "output_tokens": 16229,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 160
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 120
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "Alibaba (reply)": 160
+   },
+   "model_returned": {
+    "qwen/qwen3.7-flash": 160
+   },
+   "with_thinking": 0
+  },
+  "glm_flash": {
+   "records": 160,
+   "results": 159,
+   "errors_only": 1,
+   "in_flight": 0,
+   "cost_usd": 0.010222,
+   "reported_cost_usd": 0.008828,
+   "input_tokens": 81211,
+   "output_tokens": 16523,
+   "reasoning_tokens": 2666,
+   "status": {
+    "ok": 159
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 119
+   },
+   "flags": {
+    "fenced": 1
+   },
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 159
+   },
+   "serving_provider": {
+    "GMICloud (reply)": 159
+   },
+   "model_returned": {
+    "z-ai/glm-5.3-flash": 159
+   },
+   "with_thinking": 115
+  },
+  "gpt_oss_120b": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.006554,
+   "reported_cost_usd": 0,
+   "input_tokens": 86646,
+   "output_tokens": 19695,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 160
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 120
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "deepinfra (header)": 160
+   },
+   "model_returned": {
+    "openai/gpt-oss-120b": 160
+   },
+   "with_thinking": 160
+  },
+  "llama4_scout": {
+   "records": 160,
+   "results": 160,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.01252,
+   "reported_cost_usd": 0,
+   "input_tokens": 82772,
+   "output_tokens": 14143,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 119,
+    "missing": 41
+   },
+   "kind_status": {
+    "probe:ok": 20,
+    "t1:ok": 20,
+    "t2:ok": 79,
+    "t2:missing": 41
+   },
+   "flags": {
+    "fenced": 26
+   },
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 160
+   },
+   "serving_provider": {
+    "deepinfra (header)": 160
+   },
+   "model_returned": {
+    "meta-llama/Llama-4-Scout-17B-16E-Instruct": 160
+   },
+   "with_thinking": 0
+  },
+  "total": {
+   "records": 2844,
+   "results": 2843,
+   "errors_only": 1,
+   "in_flight": 0,
+   "cost_usd": 0.875047,
+   "reported_cost_usd": 0.099194,
+   "input_tokens": 1923566,
+   "output_tokens": 485591,
+   "reasoning_tokens": 2666,
+   "status": {
+    "ok": 2799,
+    "missing": 43,
+    "cut": 1
+   },
+   "kind_status": {
+    "t1:ok": 359,
+    "probe:ok": 230,
+    "t2:ok": 2110,
+    "t2_nf:ok": 100,
+    "t2:missing": 43,
+    "t1:cut": 1
+   },
+   "flags": {
+    "text_before_object": 39,
+    "text_after_object": 23,
+    "fenced": 30
+   },
+   "near_miss": {
+    "probability_fraction": 47,
+    "previous_probability_fraction": 30
+   },
+   "stop_kind": {
+    "normal": 2842,
+    "cut": 1
+   },
+   "serving_provider": {
+    "None (None)": 1564,
+    "OpenAI (reply)": 160,
+    "Google AI Studio (reply)": 160,
+    "Mistral (reply)": 160,
+    "DeepInfra (reply)": 160,
+    "Alibaba (reply)": 160,
+    "GMICloud (reply)": 159,
+    "deepinfra (header)": 320
+   },
+   "model_returned": {
+    "claude-haiku-5-5": 1200,
+    "claude-sonnet-5-5": 364,
+    "openai/gpt-6-luna": 160,
+    "google/gemini-3.1-flash-lite": 160,
+    "mistralai/mistral-small-2603": 160,
+    "deepseek/deepseek-v4.1-flash": 160,
+    "qwen/qwen3.7-flash": 160,
+    "z-ai/glm-5.3-flash": 159,
+    "openai/gpt-oss-120b": 160,
+    "meta-llama/Llama-4-Scout-17B-16E-Instruct": 160
+   },
+   "with_thinking": 756
+  }
+ }
+}

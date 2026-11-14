@@ -1,0 +1,19 @@
+{
+ "setting": "sonnet_off",
+ "api": "anthropic",
+ "route": "batch",
+ "model": "claude-sonnet-5-5",
+ "fetched_at": "2026-11-13T05:58:57+00:00",
+ "source": "cost_model",
+ "provider": "anthropic",
+ "price_in": 1.0,
+ "price_out": 5.0,
+ "quantization": null,
+ "status": null,
+ "listing_url": null,
+ "listing": null,
+ "endpoint_tag": null,
+ "note": "Anthropic batch prices of design/notes/anthropic_models_and_prices.md (the cost model)",
+ "cost_model_in": 1.0,
+ "cost_model_out": 5.0
+}

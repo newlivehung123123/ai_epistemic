@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrcccccccccc}
+\toprule
+Setting & $n$ & $D$ [90 CI] & $D_{\mathrm{up}}$ & $D_{\mathrm{down}}$ & $z$ & Holm $p$ & TOST $p$ & SD & MDE & MDE Holm & \begin{tabular}[b]{@{}c@{}}Design\\\relax effect\end{tabular} \\
+\midrule
+Haiku 5.5 off & 310 & .128 [.122, .134] & .056 & .072 & 34.5 & $<$.001 & 1.000 & .058 & .010 & .014 & 1.28 \\
+Haiku 5.5 medium & 309 & .112 [.105, .118] & .048 & .064 & 29.7 & $<$.001 & 1.000 & .059 & .011 & .014 & 1.23 \\
+Sonnet 5.5 off & 306 & .076 [.072, .081] & .029 & .047 & 27.6 & $<$.001 & 1.000 & .042 & .008 & .010 & 1.32 \\
+gpt-6-luna & 308 & .119 [.111, .128] & .054 & .066 & 22.5 & $<$.001 & 1.000 & .111 & .020 & .026 & 0.71 \\
+gemini-3.1-flash-lite & 310 & .185 [.172, .199] & .097 & .088 & 22.5 & $<$.001 & 1.000 & .135 & .025 & .032 & 1.13 \\
+mistral-small-2603 & 309 & .205 [.199, .210] & .137 & .067 & 60.6 & $<$.001 & 1.000 & .055 & .010 & .013 & 1.15 \\
+deepseek-v4.1-flash & 310 & .127 [.120, .135] & .069 & .058 & 27.4 & $<$.001 & 1.000 & .079 & .014 & .019 & 1.07 \\
+qwen3.7-flash & 309 & .164 [.151, .176] & .082 & .081 & 22.0 & $<$.001 & 1.000 & .124 & .023 & .030 & 1.13 \\
+glm-5.3-flash & 308 & .158 [.152, .165] & .081 & .077 & 38.7 & $<$.001 & 1.000 & .065 & .012 & .016 & 1.24 \\
+gpt-oss-120b & 307 & .259 [.250, .267] & .168 & .091 & 51.7 & $<$.001 & 1.000 & .082 & .015 & .020 & 1.15 \\
+llama-4-scout & 310 & .303 [.294, .312] & .172 & .132 & 56.6 & $<$.001 & 1.000 & .091 & .016 & .022 & 1.10 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Inference on $D$ on the half without the fields, the retro and prospective sets pooled. Brackets give the 90 percent bootstrap interval used by the equivalence test. $D_{\mathrm{up}}=p_2(\mathrm{enthusiast})-p_2(\mathrm{control})$ and $D_{\mathrm{down}}=p_2(\mathrm{control})-p_2(\mathrm{skeptic})$. Holm $p$ is adjusted over the 11 settings for H1, and TOST $p$ tests $|D|<0.03$ for H2. SD is the standard deviation of the item differences. MDE is the minimum detectable effect at 80 percent power with the planning design effect of 1.3, at the 0.05 level and at the strictest Holm step. The design effect is the bootstrap variance of $D$ when events are resampled divided by the bootstrap variance of $D$ when items are resampled.}
+\label{tab:dinference}
+\end{table*}

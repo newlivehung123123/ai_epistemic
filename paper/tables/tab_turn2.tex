@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccc}
+\toprule
+Setting & \begin{tabular}[b]{@{}c@{}}$D$ without\\\relax fields [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}$D$ with\\\relax fields\end{tabular} & \begin{tabular}[b]{@{}c@{}}Hide\\\relax (changes)\end{tabular} & Phantom & $S$ [CI] & Gain [CI] & \begin{tabular}[b]{@{}c@{}}Caving\\\relax cost\end{tabular} \\
+\midrule
+Haiku 5.5 off & .128 [.121, .135] & .041 & .004 (458) & .001 & 0.704 [0.646, 0.754] & .086 [.053, .118] & .0045 \\
+Haiku 5.5 medium & .112 [.104, .119] & .026 & .000 (450) & .000 & 0.625 [0.556, 0.688] & .067 [.038, .097] & .0006 \\
+Sonnet 5.5 off & .076 [.071, .082] & .024 & .000 (338) & .000 & 0.587 [0.511, 0.653] & .043 [.017, .068] & .0037 \\
+gpt-6-luna & .119 [.109, .130] & .018 & .000 (416) & .000 & 0.184 [0.088, 0.284] & .074 [.040, .109] & .0074 \\
+gemini-3.1-flash-lite & .185 [.169, .201] & .149 & .000 (955) & .000 & 0.178 [0.080, 0.283] & .130 [.091, .170] & .0003 \\
+mistral-small-2603 & .205 [.198, .211] & .165 & .002 (1391) & .051 & 0.199 [0.117, 0.284] & .115 [.078, .154] & .0068 \\
+deepseek-v4.1-flash & .127 [.118, .137] & .107 & .005 (775) & .000 & 0.138 [0.072, 0.208] & .080 [.041, .122] & .0000 \\
+qwen3.7-flash & .164 [.149, .178] & .103 & .085 (753) & .015 & 0.459 [0.358, 0.557] & .164 [.114, .215] & $-.0040$ \\
+glm-5.3-flash & .158 [.150, .167] & .111 & .008 (831) & .000 & 0.239 [0.170, 0.318] & .081 [.045, .118] & .0019 \\
+gpt-oss-120b & .259 [.249, .268] & .242 & .000 (1096) & .032 & 0.346 [0.259, 0.432] & .124 [.085, .165] & .0059 \\
+llama-4-scout & .303 [.293, .314] & .248 & .011 (1111) & .097 & 0.082 [0.037, 0.132] & .124 [.084, .165] & .0119 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Turn-2 replies by setting. $D$ is the mean of $p_2$(enthusiast) $-$ $p_2$(skeptic) over items with usable control, enthusiast and skeptic replies, on the half of the items sent without the self-report fields (306 to 310 items per setting, the retro and prospective sets pooled) and on the half sent with the fields. Hide is the share of substantive changes (a move of five points or more, or another decision, counted in parentheses) that the model reported as unchanged, and phantom is the share of unchanged answers reported as changed, on the half with the fields. $S=w_m-w_h$ is the weight on a market price minus the weight on the same number offered as the asker's own guess, on items where the number is at least 10 points from $p_1$. Gain is the Brier score of $p_1$ minus the Brier score after the market line, and caving cost is the mean Brier cost of the enthusiast and skeptic replies, on the resolved retro items without the fields. Brackets give 95 percent bootstrap intervals over events.}
+\label{tab:turn2}
+\end{table*}

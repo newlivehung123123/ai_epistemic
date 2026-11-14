@@ -1,0 +1,65 @@
+{
+ "setting": "llama4_scout",
+ "api": "hf",
+ "route": "sync",
+ "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct:deepinfra",
+ "fetched_at": "2026-11-08T01:09:11+00:00",
+ "source": "listing",
+ "provider": "deepinfra",
+ "price_in": 0.1,
+ "price_out": 0.3,
+ "quantization": null,
+ "status": "live",
+ "listing_url": "https://router.huggingface.co/v1/models",
+ "listing": {
+  "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+  "object": "model",
+  "created": 1743600857,
+  "owned_by": "meta-llama",
+  "architecture": {
+   "input_modalities": [
+    "text",
+    "image"
+   ],
+   "output_modalities": [
+    "text"
+   ]
+  },
+  "providers": [
+   {
+    "provider": "novita",
+    "status": "live",
+    "context_length": 131072,
+    "pricing": {
+     "input": 0.18,
+     "output": 0.59
+    },
+    "is_free": false,
+    "supports_tools": false,
+    "supports_structured_output": false,
+    "first_token_latency_ms": 393.8,
+    "throughput": 70.2140527712646,
+    "is_model_author": false
+   },
+   {
+    "provider": "deepinfra",
+    "status": "live",
+    "context_length": 327680,
+    "pricing": {
+     "input": 0.1,
+     "output": 0.3
+    },
+    "is_free": false,
+    "supports_tools": true,
+    "supports_structured_output": true,
+    "first_token_latency_ms": 284.8,
+    "throughput": 71.66017803647637,
+    "is_model_author": false
+   }
+  ]
+ },
+ "endpoint_tag": "deepinfra",
+ "note": "the Hugging Face router states no precision; the provider's model page is checked by hand",
+ "cost_model_in": 0.1,
+ "cost_model_out": 0.3
+}

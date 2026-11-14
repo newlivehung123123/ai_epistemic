@@ -1,0 +1,19 @@
+{
+ "setting": "llama4_scout",
+ "api": "hf",
+ "route": "sync",
+ "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct:deepinfra",
+ "fetched_at": "2026-11-11T09:36:39+00:00",
+ "source": "cost_model",
+ "provider": "deepinfra",
+ "price_in": 0.1,
+ "price_out": 0.3,
+ "quantization": null,
+ "status": null,
+ "listing_url": null,
+ "listing": null,
+ "endpoint_tag": null,
+ "note": "listing not read (ClientError: ConnectError on GET https://router.huggingface.co/v1/models); the cost model is used",
+ "cost_model_in": 0.1,
+ "cost_model_out": 0.3
+}

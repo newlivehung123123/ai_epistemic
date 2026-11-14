@@ -1,0 +1,14 @@
+{
+ "departure": "retro outcomes opened on 13 November 2026, a day before PLAN Section 12.1",
+ "frozen_open": "2026-11-14T00:00:00+00:00",
+ "departure_open": "2026-11-13T00:00:00+00:00",
+ "prospective_open": "2026-12-16T00:00:00+00:00",
+ "hashes_checked_against_readme": {
+  "data/outcomes/retro_withheld_fields.json.gz": "25802e403166756fec32c1003fab33ceb486fdb9d417cab16ce23569db36d93f",
+  "data/outcomes/retro_deleted_paragraphs.json": "2a94671ffe4cb0143eeccda0e93ac41e6dcf2e8ec3f065a9b11dd0861197f4f7",
+  "pipeline/analysis.py": "adde4e798def8cccbd1e41ecb1f4ed69520655db88899ee471e434fe3b6548b3"
+ },
+ "opened_at_utc": "2026-11-13T09:20:50+00:00",
+ "finished_at_utc": "2026-11-13T09:22:20+00:00",
+ "exit_code": 0
+}

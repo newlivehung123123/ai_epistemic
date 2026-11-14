@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{2}{c}{Enthusiast} & \multicolumn{2}{c}{Skeptic} & \multicolumn{2}{c}{Market} \\
+Setting & Moves & Progressive & Moves & Progressive & Moves & Progressive \\
+\midrule
+Haiku 5.5 off & 178 of 183 & .421 & 182 of 183 & .588 & 180 of 183 & .656 \\
+Haiku 5.5 medium & 172 of 183 & .413 & 180 of 182 & .606 & 177 of 182 & .621 \\
+Sonnet 5.5 off & 173 of 182 & .410 & 181 of 182 & .591 & 179 of 182 & .564 \\
+gpt-6-luna & 125 of 183 & .392 & 151 of 183 & .589 & 179 of 183 & .642 \\
+gemini-3.1-flash-lite & 179 of 183 & .413 & 172 of 183 & .587 & 174 of 183 & .615 \\
+mistral-small-2603 & 183 of 183 & .410 & 181 of 183 & .597 & 179 of 183 & .704 \\
+deepseek-v4.1-flash & 183 of 183 & .415 & 179 of 183 & .581 & 174 of 183 & .506 \\
+qwen3.7-flash & 147 of 183 & .408 & 167 of 183 & .587 & 179 of 183 & .575 \\
+glm-5.3-flash & 181 of 181 & .409 & 180 of 181 & .594 & 177 of 181 & .621 \\
+gpt-oss-120b & 183 of 183 & .410 & 183 of 183 & .596 & 179 of 183 & .687 \\
+llama-4-scout & 183 of 183 & .410 & 178 of 183 & .556 & 181 of 183 & .702 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Direction of turn-2 moves on the resolved retro items without the fields. A move is progressive when $p_2$ is closer to the outcome than $p_1$. The share of Yes outcomes among the items in this table is 0.384, so a move up is progressive less often than a move down.}
+\label{tab:direction}
+\end{table*}

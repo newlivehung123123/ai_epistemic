@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrcccccccc}
+\toprule
+Setting & $n$ & \begin{tabular}[b]{@{}c@{}}Brier\\\relax rank\end{tabular} & Log loss & \begin{tabular}[b]{@{}c@{}}Log loss\\\relax 0.001\end{tabular} & Accuracy & AUC [CI] & \begin{tabular}[b]{@{}c@{}}BSS base\\\relax [CI]\end{tabular} & $U$ [CI] & $U$ rank \\
+\midrule
+Haiku 5.5 off & 359 & 4 [3, 6] & 0.668 & 0.668 & .630 & .670 [.610, .728] & 0.023 [$-0.078$, 0.116] & 4.68 [1.84, 7.56] & 5 [3, 7] \\
+Haiku 5.5 medium & 359 & 2 [1, 3] & 0.636 & 0.636 & .687 & .713 [.652, .769] & 0.093 [$-0.017$, 0.197] & 6.70 [3.80, 9.61] & 2 [2, 4] \\
+Sonnet 5.5 off & 356 & 1 [1, 2] & 0.589 & 0.589 & .692 & .749 [.694, .801] & 0.151 [0.043, 0.251] & 9.28 [6.54, 12.04] & 1 [1, 1] \\
+gpt-6-luna & 359 & 3 [2, 6] & 0.684 & 0.684 & .663 & .669 [.608, .728] & 0.029 [$-0.078$, 0.127] & 4.05 [1.45, 6.68] & 6 [3, 7] \\
+gemini-3.1-flash-lite & 359 & 9 [6, 10] & 0.868 & 0.912 & .638 & .643 [.580, .705] & $-0.113$ [$-0.259$, 0.025] & 1.95 [$-1.26$, 5.19] & 8 [6, 9] \\
+mistral-small-2603 & 359 & 10 [6, 10] & 0.763 & 0.776 & .588 & .555 [.493, .617] & $-0.117$ [$-0.215$, $-0.026$] & $-1.24$ [$-3.84$, 1.32] & 10 [9, 10] \\
+deepseek-v4.1-flash & 358 & 5 [3, 8] & 0.760 & 0.766 & .684 & .702 [.641, .761] & 0.000 [$-0.127$, 0.121] & 4.71 [2.08, 7.32] & 4 [2, 7] \\
+qwen3.7-flash & 359 & 11 [11, 11] & 1.073 & 1.118 & .581 & .539 [.476, .600] & $-0.355$ [$-0.492$, $-0.226$] & 0.19 [$-2.39$, 2.75] & 9 [8, 10] \\
+glm-5.3-flash & 355 & 6 [3, 9] & 0.704 & 0.704 & .628 & .682 [.620, .741] & $-0.009$ [$-0.144$, 0.116] & 5.39 [2.09, 8.66] & 3 [2, 7] \\
+gpt-oss-120b & 358 & 8 [5, 10] & 0.747 & 0.751 & .617 & .563 [.500, .627] & $-0.089$ [$-0.166$, $-0.019$] & 2.92 [0.91, 5.04] & 7 [4, 8] \\
+llama-4-scout & 359 & 7 [5, 10] & 0.749 & 0.761 & .607 & .547 [.490, .605] & $-0.088$ [$-0.161$, $-0.020$] & $-6.66$ [$-10.37$, $-2.84$] & 11 [11, 11] \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Turn-1 scores on the resolved retro questions with ranks. Ranks run from 1 (best) and brackets after a rank give the 95 percent bootstrap interval of the rank over events. Log loss clips probabilities to [0.01, 0.99] and log loss 0.001 to [0.001, 0.999]. Accuracy counts a probability above 0.5 as a forecast of Yes. The ranks describe the resolved retro questions and do not identify a best model.}
+\label{tab:scores}
+\end{table*}

@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lll}
+\toprule
+& Retro & Prospective \\
+\midrule
+Forecast date $F$ & 8 October 2026 & 12 November 2026 \\
+Scheduled end dates & 15 October to 8 November & 19 November to 15 December \\
+Markets fetched (UTC) & 11 November, 14:30 & 12 November, 17:58 \\
+Items & 400 & 220 \\
+Events & 251 & 132 \\
+Families & 53 & 30 \\
+Items without the self-report fields & 200 & 110 \\
+Mirror pairs & 9 & 4 \\
+Items resolved at scoring & 359 & Opens 16 December 2026 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{The retro and prospective question sets. Each set holds binary Polymarket questions that were open at $F$, priced between 0.05 and 0.95 at $F$ and scheduled to end in the stated window. One election day in one place is one family. Other events are grouped by 26 written rules, and an event that matches no rule is a family of one. The prospective events were grouped by hand on 13 November 2026. A mirror pair holds the two candidate markets of one election, with no other candidate market priced at $F$, whose prices at $F$ sum to at least 0.90, so that the probabilities of the two candidates should sum to nearly 1. The retro outcomes were opened on 13 November 2026, and 41 retro items were still unresolved and are not scored.}
+\label{tab:sets}
+\end{table*}

@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccccc}
+\toprule
+Setting & As served & Repeat & Copy & \begin{tabular}[b]{@{}c@{}}Follow\\\relax 0.01\end{tabular} & \begin{tabular}[b]{@{}c@{}}Follow\\\relax 0.015\end{tabular} & \begin{tabular}[b]{@{}c@{}}Follow\\\relax 0.05\end{tabular} & \begin{tabular}[b]{@{}c@{}}Follow\\\relax 0.10\end{tabular} & Ideal \\
+\midrule
+Haiku 5.5 off & H2 & S, gain & S & S, gain & H2, S, gain & H2, S, gain & H2, S, gain & Pass \\
+Haiku 5.5 medium & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+Sonnet 5.5 off & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+gpt-6-luna & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+gemini-3.1-flash-lite & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+mistral-small-2603 & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+deepseek-v4.1-flash & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+qwen3.7-flash & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+glm-5.3-flash & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+gpt-oss-120b & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+llama-4-scout & H2 & S, gain & S & S, gain & S, gain & H2, S, gain & H2, S, gain & Pass \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Closing rule for each setting as served and for the scripted policies applied to the setting's own turn-1 answers. Each entry names the conditions that fail, H2 for $|D|<0.03$, S for the 95 percent interval of $S$ above 0 and gain for the 95 percent interval of the market-arm gain above 0.}
+\label{tab:grid}
+\end{table*}

@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccccccc}
+\toprule
+& \multicolumn{6}{c}{Stakes regression} & \multicolumn{2}{c}{Mirror pairs} & \multicolumn{3}{c}{Knowledge probe} \\
+Setting & $b_t$ & SE event & $p$ & SE family & $p$ & $c_q$ & Retro & Prosp. & Known & \begin{tabular}[b]{@{}c@{}}With\\\relax outcome\end{tabular} & Match \\
+\midrule
+Haiku 5.5 off & 0.066 & 0.038 & .084 & 0.053 & .213 & 0.384 & $-.314$ & $-.128$ & .000 & 0 & -- \\
+Haiku 5.5 medium & 0.059 & 0.042 & .159 & 0.054 & .276 & 0.498 & $-.167$ & .150 & -- & -- & -- \\
+Sonnet 5.5 off & 0.094 & 0.040 & .018 & 0.060 & .113 & 0.578 & $-.177$ & $-.077$ & .000 & 0 & -- \\
+gpt-6-luna & 0.062 & 0.042 & .141 & 0.043 & .151 & 0.361 & $-.513$ & $-.188$ & .003 & 1 & .000 \\
+gemini-3.1-flash-lite & 0.016 & 0.052 & .750 & 0.051 & .745 & 0.485 & $-.294$ & $-.050$ & .062 & 24 & .625 \\
+mistral-small-2603 & 0.052 & 0.038 & .177 & 0.039 & .184 & 0.182 & $-.422$ & .087 & .003 & 1 & .000 \\
+deepseek-v4.1-flash & 0.054 & 0.047 & .247 & 0.035 & .126 & 0.472 & $-.577$ & $-.113$ & .015 & 5 & .800 \\
+qwen3.7-flash & 0.050 & 0.058 & .392 & 0.053 & .346 & 0.224 & $-.530$ & .175 & .035 & 14 & .500 \\
+glm-5.3-flash & 0.050 & 0.047 & .287 & 0.046 & .280 & 0.445 & $-.068$ & $-.253$ & .007 & 3 & .667 \\
+gpt-oss-120b & 0.028 & 0.028 & .320 & 0.024 & .255 & 0.163 & $-.594$ & $-.507$ & .003 & 1 & 1.000 \\
+llama-4-scout & 0.019 & 0.032 & .553 & 0.034 & .578 & 0.100 & $-.572$ & $-.175$ & .015 & 6 & .500 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Checks on turn-1 answers. The stakes regression fits $p_1=a+b_t\,t+c_q\,q$ over all items with standard errors clustered by event and by family. A mirror pair holds the two candidates of one election whose market prices at $F$ sum to at least 0.90, and the signed mean of a pair is the sum of the two turn-1 probabilities minus 1, so a positive mean would show a lean toward Yes. The probe asks whether the model knows how the question was resolved. Known is the share of the 400 retro items the model claims to know, with outcome counts the claimed items that have an outcome, and match is the share of the claimed items with an outcome where the stated outcome is right. Haiku 5.5 medium was not probed.}
+\label{tab:stakes}
+\end{table*}

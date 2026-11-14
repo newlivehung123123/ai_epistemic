@@ -1,0 +1,383 @@
+{
+ "run": "pilot_wording",
+ "stub": false,
+ "written": "2026-11-11T14:22:44+00:00",
+ "settings": {
+  "haiku_off": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.005081,
+   "reported_cost_usd": 0,
+   "input_tokens": 52078,
+   "output_tokens": 9907,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "None (None)": 60
+   },
+   "model_returned": {
+    "claude-haiku-5-5": 60
+   },
+   "with_thinking": 0
+  },
+  "haiku_medium": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.009296,
+   "reported_cost_usd": 0,
+   "input_tokens": 49240,
+   "output_tokens": 27335,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "None (None)": 60
+   },
+   "model_returned": {
+    "claude-haiku-5-5": 60
+   },
+   "with_thinking": 54
+  },
+  "sonnet_off": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.095929,
+   "reported_cost_usd": 0,
+   "input_tokens": 48004,
+   "output_tokens": 9585,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "None (None)": 60
+   },
+   "model_returned": {
+    "claude-sonnet-5-5": 60
+   },
+   "with_thinking": 0
+  },
+  "gpt6luna": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.005634,
+   "reported_cost_usd": 0.005634,
+   "input_tokens": 33576,
+   "output_tokens": 4553,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "OpenAI (reply)": 60
+   },
+   "model_returned": {
+    "openai/gpt-6-luna": 60
+   },
+   "with_thinking": 0
+  },
+  "gemini_flash_lite": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.02022,
+   "reported_cost_usd": 0.02022,
+   "input_tokens": 36716,
+   "output_tokens": 7361,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {
+    "previous_probability_fraction": 6,
+    "probability_fraction": 6
+   },
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "Google AI Studio (reply)": 60
+   },
+   "model_returned": {
+    "google/gemini-3.1-flash-lite": 60
+   },
+   "with_thinking": 60
+  },
+  "mistral_small": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.007834,
+   "reported_cost_usd": 0.004669,
+   "input_tokens": 34512,
+   "output_tokens": 4428,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "Mistral (reply)": 60
+   },
+   "model_returned": {
+    "mistralai/mistral-small-2603": 60
+   },
+   "with_thinking": 0
+  },
+  "deepseek_flash": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.007556,
+   "reported_cost_usd": 0.004931,
+   "input_tokens": 34322,
+   "output_tokens": 6549,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {
+    "probability_fraction": 1
+   },
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "DeepInfra (reply)": 60
+   },
+   "model_returned": {
+    "deepseek/deepseek-v4.1-flash": 60
+   },
+   "with_thinking": 0
+  },
+  "qwen_flash": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.001952,
+   "reported_cost_usd": 0.001792,
+   "input_tokens": 36426,
+   "output_tokens": 6611,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "Alibaba (reply)": 60
+   },
+   "model_returned": {
+    "qwen/qwen3.7-flash": 60
+   },
+   "with_thinking": 0
+  },
+  "glm_flash": {
+   "records": 60,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.00429,
+   "reported_cost_usd": 0.003699,
+   "input_tokens": 34384,
+   "output_tokens": 6846,
+   "reasoning_tokens": 993,
+   "status": {
+    "ok": 60
+   },
+   "kind_status": {
+    "t2:ok": 60
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "GMICloud (reply)": 60
+   },
+   "model_returned": {
+    "z-ai/glm-5.3-flash": 60
+   },
+   "with_thinking": 39
+  },
+  "gpt_oss_120b": {
+   "records": 120,
+   "results": 53,
+   "errors_only": 7,
+   "in_flight": 0,
+   "cost_usd": 0.002276,
+   "reported_cost_usd": 0,
+   "input_tokens": 31623,
+   "output_tokens": 6504,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 53
+   },
+   "kind_status": {
+    "t2:ok": 53
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 53
+   },
+   "serving_provider": {
+    "deepinfra (header)": 53
+   },
+   "model_returned": {
+    "openai/gpt-oss-120b": 53
+   },
+   "with_thinking": 53
+  },
+  "llama4_scout": {
+   "records": 120,
+   "results": 60,
+   "errors_only": 0,
+   "in_flight": 0,
+   "cost_usd": 0.00525,
+   "reported_cost_usd": 0,
+   "input_tokens": 34770,
+   "output_tokens": 5910,
+   "reasoning_tokens": 0,
+   "status": {
+    "ok": 56,
+    "missing": 4
+   },
+   "kind_status": {
+    "t2:ok": 56,
+    "t2:missing": 4
+   },
+   "flags": {},
+   "near_miss": {},
+   "stop_kind": {
+    "normal": 60
+   },
+   "serving_provider": {
+    "deepinfra (header)": 60
+   },
+   "model_returned": {
+    "meta-llama/Llama-4-Scout-17B-16E-Instruct": 60
+   },
+   "with_thinking": 0
+  },
+  "total": {
+   "records": 780,
+   "results": 653,
+   "errors_only": 7,
+   "in_flight": 0,
+   "cost_usd": 0.165318,
+   "reported_cost_usd": 0.040946,
+   "input_tokens": 425651,
+   "output_tokens": 95589,
+   "reasoning_tokens": 993,
+   "status": {
+    "ok": 649,
+    "missing": 4
+   },
+   "kind_status": {
+    "t2:ok": 649,
+    "t2:missing": 4
+   },
+   "flags": {},
+   "near_miss": {
+    "previous_probability_fraction": 6,
+    "probability_fraction": 7
+   },
+   "stop_kind": {
+    "normal": 653
+   },
+   "serving_provider": {
+    "None (None)": 180,
+    "OpenAI (reply)": 60,
+    "Google AI Studio (reply)": 60,
+    "Mistral (reply)": 60,
+    "DeepInfra (reply)": 60,
+    "Alibaba (reply)": 60,
+    "GMICloud (reply)": 60,
+    "deepinfra (header)": 113
+   },
+   "model_returned": {
+    "claude-haiku-5-5": 120,
+    "claude-sonnet-5-5": 60,
+    "openai/gpt-6-luna": 60,
+    "google/gemini-3.1-flash-lite": 60,
+    "mistralai/mistral-small-2603": 60,
+    "deepseek/deepseek-v4.1-flash": 60,
+    "qwen/qwen3.7-flash": 60,
+    "z-ai/glm-5.3-flash": 60,
+    "openai/gpt-oss-120b": 53,
+    "meta-llama/Llama-4-Scout-17B-16E-Instruct": 60
+   },
+   "with_thinking": 206
+  }
+ }
+}

@@ -1,0 +1,35 @@
+# The public repository holds the code, the plan, the replies, the price and
+# batch records, the aggregate results and the paper. Polymarket text is left
+# out until Polymarket's terms of use are read (PLAN Section 12.3), and the
+# prospective outcomes are released with the ARR paper.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/design/
+!/pipeline/
+!/tests/
+!/paper/
+!/data/
+
+/design/notes/*
+!/design/notes/*.md
+!/design/notes/scripts/
+
+/data/*
+!/data/release/
+!/data/runs/
+/data/runs/*/requests/
+/data/runs/*/dryrun/
+
+/paper/docx_build/
+/paper/*.aux
+/paper/*.log
+/paper/*.bbl
+/paper/*.blg
+/paper/*.out
+
+__pycache__/
+.DS_Store
+.env
+.envfuc

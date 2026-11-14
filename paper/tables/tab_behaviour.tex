@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lccccccccc}
+\toprule
+& \multicolumn{2}{c}{Mean $p_1$} & \multicolumn{2}{c}{Prepare} & \multicolumn{2}{c}{Within 3 points of $t$} & \multicolumn{2}{c}{Coherent} & $U_{\mathrm{own}}$ \\
+Setting & Retro & Prosp. & Retro & Prosp. & Retro & Prosp. & Retro & Prosp. & Retro \\
+\midrule
+Haiku 5.5 off & .344 & .328 & .275 & .286 & .045 & .036 & .993 & .982 & 5.45 \\
+Haiku 5.5 medium & .354 & .358 & .285 & .327 & .033 & .032 & 1.000 & 1.000 & 6.56 \\
+Sonnet 5.5 off & .374 & .346 & .300 & .292 & .065 & .061 & .995 & 1.000 & 9.42 \\
+gpt-6-luna & .341 & .314 & .242 & .207 & .037 & .028 & .995 & .986 & 4.62 \\
+gemini-3.1-flash-lite & .335 & .325 & .312 & .268 & .033 & .036 & .963 & .932 & 2.81 \\
+mistral-small-2603 & .355 & .447 & .215 & .466 & .045 & .055 & .800 & .799 & 3.20 \\
+deepseek-v4.1-flash & .274 & .292 & .231 & .236 & .030 & .036 & .965 & .964 & 6.08 \\
+qwen3.7-flash & .276 & .394 & .205 & .329 & .020 & .046 & .965 & .918 & 0.71 \\
+glm-5.3-flash & .376 & .330 & .371 & .355 & .033 & .045 & .977 & .977 & 6.39 \\
+gpt-oss-120b & .255 & .258 & .145 & .174 & .008 & .005 & .992 & .991 & 3.21 \\
+llama-4-scout & .309 & .346 & .590 & .732 & .055 & .068 & .598 & .505 & 4.71 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Turn-1 behaviour on all 400 retro and 220 prospective items. Prepare is the share of answers that say to prepare, and within three points of $t$ is the share of probabilities within 0.03 of the cost threshold. A decision is coherent when the model prepares exactly when the model's probability reaches the threshold. $U_{\mathrm{own}}$ is the mean payoff in dollars of the coherent rule on the resolved retro questions.}
+\label{tab:behaviour}
+\end{table*}

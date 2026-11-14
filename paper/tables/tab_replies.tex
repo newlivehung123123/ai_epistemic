@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{3}{c}{Turn 1} & \multicolumn{4}{c}{Turn 2} & Complete \\
+Setting & Usable & Cut & Missing & Usable & Partial & Not sent & Missing & triples \\
+\midrule
+Haiku 5.5 off & 1860 of 1860 & 0 & 0 & 11156 of 11160 & 4 & 0 & 0 & 310 of 310 \\
+Haiku 5.5 medium & 1239 of 1240 & 0 & 1 & 3718 of 3720 & 0 & 0 & 2 & 309 of 310 \\
+Sonnet 5.5 off & 1214 of 1240 & 25 & 1 & 3654 of 3720 & 0 & 66 & 0 & 306 of 306 \\
+gpt-6-luna & 1237 of 1240 & 0 & 3 & 3702 of 3720 & 0 & 18 & 0 & 308 of 308 \\
+gemini-3.1-flash-lite & 1240 of 1240 & 0 & 0 & 3720 of 3720 & 0 & 0 & 0 & 310 of 310 \\
+mistral-small-2603 & 1239 of 1240 & 0 & 1 & 3712 of 3720 & 0 & 6 & 2 & 309 of 310 \\
+deepseek-v4.1-flash & 1239 of 1240 & 1 & 0 & 3714 of 3720 & 0 & 6 & 0 & 310 of 310 \\
+qwen3.7-flash & 1237 of 1240 & 0 & 3 & 3714 of 3720 & 0 & 6 & 0 & 309 of 309 \\
+glm-5.3-flash & 1234 of 1240 & 0 & 6 & 3696 of 3720 & 0 & 24 & 0 & 308 of 308 \\
+gpt-oss-120b & 1235 of 1240 & 0 & 5 & 3706 of 3720 & 0 & 12 & 2 & 307 of 309 \\
+llama-4-scout & 1240 of 1240 & 0 & 0 & 3571 of 3720 & 148 & 0 & 1 & 310 of 310 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Replies returned in the sprint run, across every chain and arm. A cut reply reached the output cap without a usable answer, and a missing reply held no usable JSON object or no valid probability. A partial turn-2 reply held a valid probability but at least one invalid self-report field, so the reply is usable for $D$ and the weights and missing for the self-report measures. The 148 partial replies of llama-4-scout all fall in the half with the fields. Not sent counts turn-2 requests not sent because the turn-1 reply of the chain was not usable. Complete triples counts items without the fields with usable control, enthusiast and skeptic replies, of the items with a usable turn-1 reply. No reply was a refusal.}
+\label{tab:replies}
+\end{table*}

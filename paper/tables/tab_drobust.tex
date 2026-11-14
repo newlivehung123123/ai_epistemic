@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lcccccccc}
+\toprule
+Setting & \begin{tabular}[b]{@{}c@{}}95 CI by\\\relax family\end{tabular} & Log-odds & \begin{tabular}[b]{@{}c@{}}Complete\\\relax chains\end{tabular} & \begin{tabular}[b]{@{}c@{}}Decision\\\relax share\end{tabular} & Retro & Prospective & \begin{tabular}[b]{@{}c@{}}Without\\\relax Brazil\end{tabular} & \begin{tabular}[b]{@{}c@{}}Without\\\relax earlier pull\end{tabular} \\
+\midrule
+Haiku 5.5 off & [.116, .139] & 0.849 & .128 & .145 & .132 & .121 & .132 & .125 \\
+Haiku 5.5 medium & [.099, .123] & 0.768 & .112 & .123 & .111 & .113 & .110 & .104 \\
+Sonnet 5.5 off & [.066, .086] & 0.580 & .076 & .098 & .077 & .074 & .078 & .072 \\
+gpt-6-luna & [.107, .134] & 0.841 & .119 & .084 & .113 & .132 & .111 & .108 \\
+gemini-3.1-flash-lite & [.166, .203] & 1.443 & .185 & .239 & .193 & .172 & .195 & .192 \\
+mistral-small-2603 & [.198, .214] & 1.143 & .205 & .513 & .208 & .198 & .208 & .204 \\
+deepseek-v4.1-flash & [.116, .139] & 1.225 & .127 & .077 & .129 & .125 & .128 & .127 \\
+qwen3.7-flash & [.139, .191] & 1.207 & .164 & .136 & .144 & .200 & .145 & .150 \\
+glm-5.3-flash & [.142, .173] & 1.145 & .158 & .143 & .156 & .163 & .156 & .148 \\
+gpt-oss-120b & [.247, .270] & 1.622 & .259 & .397 & .259 & .257 & .259 & .255 \\
+llama-4-scout & [.283, .328] & 1.773 & .303 & .474 & .298 & .313 & .297 & .293 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Robustness of $D$ on the half without the fields. The first column gives the 95 percent interval from resampling families in place of events. Log-odds computes $D$ on the log-odds scale with probabilities clipped to [0.01, 0.99]. Complete chains keeps items with usable replies in turn 1 and all six arms. Decision share is the share of enthusiast replies that say to prepare minus the share of skeptic replies that say to prepare. Without Brazil and Without earlier pull drop, from the retro set, the Brazilian election family and the events in the earlier pull of markets (Appendix~\ref{app:exposure}).}
+\label{tab:drobust}
+\end{table*}
