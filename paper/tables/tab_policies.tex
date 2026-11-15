@@ -7,7 +7,7 @@
 \toprule
 Policy & $D$ & $S$ & Gain & \begin{tabular}[b]{@{}l@{}}Closing\\\relax rule\end{tabular} \\
 \midrule
-Model as served & .128 & 0.704 & .086 & Fails H2 \\
+Model as tested & .128 & 0.704 & .086 & Fails H2 \\
 \addlinespace
 Repeat & .000 & 0.000 & .000 & Fails S, gain \\
 Copy & .000 & 0.000 & .094 & Fails S \\
@@ -21,6 +21,6 @@ Never-change instruction & .017 & 0.286 & $-.020$ & Fails H2, gain \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{Scripted reply policies applied to the turn-1 answers of Haiku 5.5 off, beside the replies of the model as served and with the never-change instruction. Repeat returns $p_1$ in every arm. Copy returns the stated number in the market and hunch arms and $p_1$ elsewhere. Follow $k$ moves $p_1$ up by $k$ in the enthusiast arm and down by $k$ in the skeptic arm (clipped to [0, 1]) and returns $p_1$ elsewhere. Ideal moves $p_1$ toward the market price by $w^*=1.057$, the fixed weight with the lowest Brier score on the 183 resolved retro items sent without the fields, in the market arm, and returns $p_1$ elsewhere. The weight is fitted on the same items as the gain, so the gain of Ideal is the best any fixed weight can reach on the 183 items. The closing rule needs H2 to hold (the 90 percent interval of $D$ inside $\pm 0.03$), the 95 percent interval of $S$ to lie above 0 and the 95 percent interval of the gain to lie above 0. The never-change row uses the 100 retro items sent with the instruction. Only 21 of the 51 items without the fields have complete replies, so H2 is judged on bounds from $-0.329$ to 0.318.}
+\caption{Scripted reply policies applied to the turn-1 answers of Haiku 5.5 off, beside the replies of the model as tested and with the never-change instruction. Repeat returns $p_1$ in every arm. Copy returns the stated number in the market and user-estimate arms and $p_1$ elsewhere. Follow $k$ moves $p_1$ up by $k$ in the enthusiast arm and down by $k$ in the sceptic arm (clipped to [0, 1]) and returns $p_1$ elsewhere. Ideal moves $p_1$ toward the market price by $w^*=1.057$, the fixed weight with the lowest Brier score on the 183 resolved retro items sent without the fields, in the market arm, and returns $p_1$ elsewhere. The weight is fitted on the same items as the gain, so the gain of Ideal is the best any fixed weight can reach on the 183 items. The closing rule needs H2 to hold (the 90 percent interval of $D$ inside $\pm 0.03$), the 95 percent interval of $S$ to lie above 0 and the 95 percent interval of the gain to lie above 0. The never-change row uses the 100 retro items sent with the instruction. Only 21 of the 51 items without the fields have complete replies, so H2 is judged on bounds from $-0.329$ to 0.318.}
 \label{tab:policies}
 \end{table}

@@ -5,7 +5,7 @@
 \begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lccccccc}
 \toprule
-Setting & \begin{tabular}[b]{@{}c@{}}$D$ without\\\relax fields [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}$D$ with\\\relax fields\end{tabular} & \begin{tabular}[b]{@{}c@{}}Hide\\\relax (changes)\end{tabular} & Phantom & $S$ [CI] & Gain [CI] & \begin{tabular}[b]{@{}c@{}}Caving\\\relax cost\end{tabular} \\
+Setting & \begin{tabular}[b]{@{}c@{}}$D$ without\\\relax fields [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}$D$ with\\\relax fields\end{tabular} & \begin{tabular}[b]{@{}c@{}}Hide\\\relax (changes)\end{tabular} & Phantom & $S$ [CI] & Gain [CI] & \begin{tabular}[b]{@{}c@{}}Concession\\\relax cost\end{tabular} \\
 \midrule
 Haiku 5.5 off & .128 [.121, .135] & .041 & .004 (458) & .001 & 0.704 [0.646, 0.754] & .086 [.053, .118] & .0045 \\
 Haiku 5.5 medium & .112 [.104, .119] & .026 & .000 (450) & .000 & 0.625 [0.556, 0.688] & .067 [.038, .097] & .0006 \\
@@ -21,6 +21,6 @@ llama-4-scout & .303 [.293, .314] & .248 & .011 (1111) & .097 & 0.082 [0.037, 0.
 \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{Turn-2 replies by setting. $D$ is the mean of $p_2$(enthusiast) $-$ $p_2$(skeptic) over items with usable control, enthusiast and skeptic replies, on the half of the items sent without the self-report fields (306 to 310 items per setting, the retro and prospective sets pooled) and on the half sent with the fields. Hide is the share of substantive changes (a move of five points or more, or another decision, counted in parentheses) that the model reported as unchanged, and phantom is the share of unchanged answers reported as changed, on the half with the fields. $S=w_m-w_h$ is the weight on a market price minus the weight on the same number offered as the asker's own guess, on items where the number is at least 10 points from $p_1$. Gain is the Brier score of $p_1$ minus the Brier score after the market line, and caving cost is the mean Brier cost of the enthusiast and skeptic replies, on the resolved retro items without the fields. Brackets give 95 percent bootstrap intervals over events.}
+\caption{Turn-2 replies by setting. $D$ is the mean of $p_2$(enthusiast) $-$ $p_2$(sceptic) over items with usable control, enthusiast and sceptic replies, on the half of the items sent without the self-report fields (306 to 310 items per setting, the retro and prospective sets pooled) and on the half sent with the fields. Hide is the share of substantive changes (a move of five points or more, or another decision, counted in parentheses) that the model reported as unchanged, and phantom is the share of unchanged answers reported as changed, on the half with the fields. $S=w_m-w_h$ is the weight on a market price minus the weight on the same number offered as the user's own estimate, on items where the number is at least 10 points from $p_1$. Gain is the Brier score of $p_1$ minus the Brier score after the market message, and concession cost is the mean Brier cost of the enthusiast and sceptic replies, on the resolved retro items without the fields. Brackets give 95 percent bootstrap intervals over events.}
 \label{tab:turn2}
 \end{table*}

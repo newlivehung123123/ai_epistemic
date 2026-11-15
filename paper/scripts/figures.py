@@ -3,7 +3,7 @@ data/runs/sprint/analysis_score.json only.
 
 Figure 1, panel (a), shows D on the half of the items sent without the self-report fields and on the half
 sent with them. Panel (b) shows the weight given to a market price and to the same number offered as the
-asker's own guess. Figure 2 shows the CORP reliability diagram of the turn-1 forecasts of every setting and
+user's own estimate. Figure 2 shows the CORP reliability diagram of the turn-1 forecasts of every setting and
 of the market price on the resolved retro questions (PLAN 6.6), drawn from the block summaries that the
 frozen analysis code writes (forecast range, number of forecasts and estimated event probability of each
 block). Black and white, Times, sized for a two-column figure* in the ACL template.
@@ -88,15 +88,15 @@ def fig1(preview=None):
     a.set_xlim(-0.045, 0.335)
     a.set_xticks([0, 0.1, 0.2, 0.3])
     a.set_xticklabels(["0", "0.1", "0.2", "0.3"])
-    a.set_xlabel(r"$D$, mean of $p_2$(enthusiast) $-$ $p_2$(skeptic)")
-    a.set_title("(a) Movement toward the asker's stated lean", loc="left", pad=25)
+    a.set_xlabel(r"$D$, mean of $p_2$(enthusiast) $-$ $p_2$(sceptic)")
+    a.set_title("(a) Movement toward the opinion of the user", loc="left", pad=25)
     filled = Line2D([], [], marker="o", ms=4.2, mew=0.8, mec=INK, mfc=INK, color=INK, lw=0.8, label="Without the fields")
     hollow = Line2D([], [], marker="o", ms=4.2, mew=0.8, mec=INK, mfc="white", color=INK, lw=0.8, label="With the fields")
     band = Patch(facecolor=BAND, edgecolor="none", label=r"Equivalence margin of $\pm$0.03")
     a.legend(handles=[filled, band, hollow], loc="lower left", bbox_to_anchor=(0.0, 1.02), ncol=2, frameon=False,
              borderaxespad=0, handlelength=1.6, columnspacing=1.0, handletextpad=0.5)
 
-    # panel (b): weight on a market price and on the asker's own guess
+    # panel (b): weight on a market price and on the user's own estimate
     for x in (0, 1):
         b.axvline(x, color=INK, lw=0.6, ls=(0, (1, 1.6)), zorder=1)
     dots(b, [y - OFFSET for y in ys], [r["w_m"] for r in rows], True, "s")
@@ -105,11 +105,11 @@ def fig1(preview=None):
     b.set_xticks([0, 0.25, 0.5, 0.75, 1])
     b.set_xticklabels(["0", "0.25", "0.5", "0.75", "1"])
     b.set_xlabel("Weight on the number shown")
-    b.set_title("(b) Market price against the asker's own guess", loc="left", pad=25)
+    b.set_title("(b) Market price against the user's own estimate", loc="left", pad=25)
     b.legend(handles=[Line2D([], [], marker="s", ms=4.2, mew=0.8, mec=INK, mfc=INK, color=INK, lw=0.8,
                              label=r"Market price, $w_m$"),
                       Line2D([], [], marker="s", ms=4.2, mew=0.8, mec=INK, mfc="white", color=INK, lw=0.8,
-                             label=r"Asker's own guess, $w_h$")],
+                             label=r"User's own estimate, $w_h$")],
              loc="lower left", bbox_to_anchor=(0.0, 1.02), ncol=1, frameon=False, borderaxespad=0,
              handlelength=1.6, columnspacing=1.0, handletextpad=0.5)
 

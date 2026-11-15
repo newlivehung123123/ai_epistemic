@@ -5,7 +5,7 @@
 \begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccccccc}
 \toprule
-& \multicolumn{3}{c}{Third of $|p_1-0.5|$} & \multicolumn{3}{c}{Third of $|p_1-t|$} & \multicolumn{2}{c}{Re-draw gap} \\
+& \multicolumn{3}{c}{Third of $|p_1-0.5|$} & \multicolumn{3}{c}{Third of $|p_1-t|$} & \multicolumn{2}{c}{Repeat-request gap} \\
 Setting & Nearest & Middle & Farthest & Nearest & Middle & Farthest & Below 5 & 5 or more \\
 \midrule
 Haiku 5.5 off & .161 & .140 & .063 & .138 & .132 & .113 & .113 & .142 \\
@@ -22,6 +22,6 @@ llama-4-scout & .287 & .344 & .185 & .321 & .299 & .290 & .301 & .306 \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{$D$ by stratum on the half without the fields. Thirds are cut at the terciles of each setting's own turn-1 probabilities, fixed at the full-sample values. The re-draw gap is $|p_1-p_1'|$ in points, where $p_1'$ is the turn-1 probability of an independent second request.}
+\caption{$D$ by stratum on the half without the fields. Thirds are cut at the terciles of each setting's own turn-1 probabilities, fixed at the full-sample values. The repeat-request gap is $|p_1-p_1'|$ in points, where $p_1'$ is the turn-1 probability of an independent second request.}
 \label{tab:strata}
 \end{table*}

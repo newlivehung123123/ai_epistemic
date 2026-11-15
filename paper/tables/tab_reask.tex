@@ -5,7 +5,7 @@
 \begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccccccc}
 \toprule
-Setting & \begin{tabular}[b]{@{}c@{}}Re-draw\\\relax gap [CI]\end{tabular} & Gap 5+ & \begin{tabular}[b]{@{}c@{}}Control\\\relax move\end{tabular} & \begin{tabular}[b]{@{}c@{}}Control $-$\\\relax re-draw [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}Noise\\\relax threshold\end{tabular} & \begin{tabular}[b]{@{}c@{}}Noise\\\relax changes\end{tabular} & \begin{tabular}[b]{@{}c@{}}Coherent\\\relax enthusiast\end{tabular} & \begin{tabular}[b]{@{}c@{}}Coherent\\\relax skeptic\end{tabular} \\
+Setting & \begin{tabular}[b]{@{}c@{}}Repeat-request\\\relax gap [CI]\end{tabular} & Gap 5+ & \begin{tabular}[b]{@{}c@{}}Control\\\relax change\end{tabular} & \begin{tabular}[b]{@{}c@{}}Control $-$\\\relax repeat [CI]\end{tabular} & \begin{tabular}[b]{@{}c@{}}Noise\\\relax threshold\end{tabular} & \begin{tabular}[b]{@{}c@{}}Noise\\\relax changes\end{tabular} & \begin{tabular}[b]{@{}c@{}}Coherent\\\relax enthusiast\end{tabular} & \begin{tabular}[b]{@{}c@{}}Coherent\\\relax sceptic\end{tabular} \\
 \midrule
 Haiku 5.5 off & .071 [.063, .080] & .535 & .004 & $-.067$ [$-.080$, $-.055$] & .170 & .152 & .990 & .997 \\
 Haiku 5.5 medium & .064 [.057, .072] & .515 & .010 & $-.058$ [$-.068$, $-.048$] & .150 & .166 & 1.000 & .997 \\
@@ -21,6 +21,6 @@ llama-4-scout & .073 [.065, .081] & .498 & .042 & $-.028$ [$-.039$, $-.017$] & .
 \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{Re-asking and noise. The re-draw gap is the mean of $|p_1-p_1'|$ between two independent turn-1 requests, and gap 5+ is the share of items where the gap reaches five points. Control move is the mean of $|p_2-p_1|$ when the request is repeated within the conversation with no other line. The noise threshold is the 90th percentile of the re-draw gap, and noise changes is the share of turn-2 replies that move at least as far as the noise threshold or change the decision. Coherent enthusiast and coherent skeptic give the share of coherent turn-2 decisions. Turn-2 columns use the half without the fields.}
+\caption{Repeat requests and noise. The repeat-request gap is the mean of $|p_1-p_1'|$ between two independent turn-1 requests, and gap 5+ is the share of items where the gap reaches five points. Control change is the mean of $|p_2-p_1|$ when the request is repeated within the conversation with no other line. The noise threshold is the 90th percentile of the repeat-request gap, and noise changes is the share of turn-2 replies that move at least as far as the noise threshold or change the decision. Coherent enthusiast and coherent sceptic give the share of coherent turn-2 decisions. Turn-2 columns use the half without the fields.}
 \label{tab:reask}
 \end{table*}
