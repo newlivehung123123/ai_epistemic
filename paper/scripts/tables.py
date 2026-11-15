@@ -191,7 +191,7 @@ def table_turn1():
     write("tab_turn1",
           ["Setting & Brier [CI] & BSS base & BSS market & Log loss & AUC & MCB & DSC & $U$ & $U-U_{\\mathrm{own}}$ [CI]"],
           rows, "lccccccccc",
-          "Turn-1 forecasts on the 359 resolved retro questions. Brier is the mean squared error of the probability, "
+          "First forecasts on the 359 resolved retro questions. Brier is the mean squared error of the probability, "
           "where 0 is perfect and a constant 0.5 scores 0.25. BSS is the Brier skill score against the base rate of the "
           "outcomes and against the market price at the forecast date $F$. Log loss uses the natural logarithm with "
           "probabilities clipped to [0.01, 0.99]. MCB (miscalibration) and DSC (discrimination) come from the CORP "
@@ -199,7 +199,7 @@ def table_turn1():
           "in US dollars per question of the stated decision to prepare, and $U_{\\mathrm{own}}$ is the payoff of "
           "preparing whenever the model's own probability reaches the cost threshold. Brackets give 95 percent "
           "bootstrap intervals over events. Sonnet 5.5 off has 356 scored questions, deepseek-v4.1-flash and "
-          "gpt-oss-120b have 358 and glm-5.3-flash has 355, because the other turn-1 replies of Sonnet 5.5 off, deepseek-v4.1-flash, gpt-oss-120b and glm-5.3-flash were not usable. "
+          "gpt-oss-120b have 358 and glm-5.3-flash has 355, because the other first answers of Sonnet 5.5 off, deepseek-v4.1-flash, gpt-oss-120b and glm-5.3-flash were not usable. "
           f"Preparing for every question loses {-val(um['always_prepare']):.2f} dollars per question, and an oracle that "
           f"prepares only for questions that resolve Yes earns {val(um['oracle']):.2f} dollars.",
           "tab:turn1", wide=True, size="\\footnotesize", sep="3pt")
@@ -221,13 +221,13 @@ def table_turn2():
     write("tab_turn2",
           ["Setting & $D$ without fields [CI] & $D$ with fields & Hide (changes) & Phantom & $S$ [CI] & Gain [CI] & Concession cost"],
           rows, "lccccccc",
-          "Turn-2 replies by setting. $D$ is the mean of $p_2$(enthusiast) $-$ $p_2$(sceptic) over items with usable "
+          "Replies to the follow-up messages by setting. $D$ is the mean of $p_2$(enthusiast) $-$ $p_2$(sceptic) over items with usable "
           f"control, enthusiast and sceptic replies, on the half of the items sent without the self-report "
           f"fields ({min(nD)} to {max(nD)} items per setting, the retro and prospective sets pooled) and on the half sent with the fields. Hide is "
-          "the share of substantive changes (a move of five points or more, or another decision, counted in parentheses) that the model reported "
+          "the share of substantive changes (a change of five points or more in the probability, or a different decision, counted in parentheses) that the model reported "
           "as unchanged, and phantom is the share of unchanged "
           "answers reported as changed, on the half with the fields. $S=w_m-w_h$ is the weight on a market "
-          "price minus the weight on the same number offered as the user's own estimate, on items where the number "
+          "price minus the weight on the same number offered as the asker's own estimate, on items where the number "
           "is at least 10 points from $p_1$. Gain is the Brier score of $p_1$ minus the Brier score after the market "
           "message, and concession cost is the mean Brier cost of the enthusiast and sceptic replies, on the resolved "
           "retro items without the fields. Brackets give 95 percent bootstrap intervals over events.",
@@ -255,13 +255,13 @@ def table_policies():
     print("  never-change bounds:", val(bounds["lower"]), val(bounds["upper"]), bounds["complete_triples"], bounds["items_with_turn_1"])
     print("  ideal w_star:", ide["w_star"])
     write("tab_policies", ["Policy & $D$ & $S$ & Gain & Closing rule"], rows, "lcccl",
-          "Scripted reply policies applied to the turn-1 answers of Haiku 5.5 off, beside the replies of the model as "
-          "tested and with the never-change instruction. Repeat returns $p_1$ in every arm. Copy returns the stated "
-          "number in the market and user-estimate arms and $p_1$ elsewhere. Follow $k$ moves $p_1$ up by $k$ in the enthusiast arm "
-          "and down by $k$ in the sceptic arm (clipped to [0, 1]) and returns $p_1$ elsewhere. Ideal moves $p_1$ toward "
+          "Scripted reply policies applied to the first answers of Haiku 5.5 off, beside the replies of the model as "
+          "tested and with the never-change instruction. The Repeat policy returns $p_1$ after every message. The Copy policy returns the stated "
+          "number after the market and asker's-estimate messages and $p_1$ elsewhere. The Follow policy raises $p_1$ by $k$ after the enthusiast message "
+          "and lowers $p_1$ by $k$ after the sceptic message (clipped to [0, 1]) and returns $p_1$ elsewhere. The Ideal policy moves $p_1$ toward "
           f"the market price by $w^*={val(ide['w_star']):.3f}$, the fixed weight with the lowest Brier score on the "
-          f"{ide['market_arm_brier_gain']['n']} resolved retro items sent without the fields, in the market arm, and returns "
-          "$p_1$ elsewhere. The weight is fitted on the same items as the gain, so the gain of Ideal is the best "
+          f"{ide['market_arm_brier_gain']['n']} resolved retro items sent without the fields, after the market message, and returns "
+          "$p_1$ elsewhere. The weight is fitted on the same items as the gain, so the gain of the Ideal policy is the best "
           "any fixed weight can reach on the 183 items. The closing rule needs H2 to hold "
           "(the 90 percent interval of $D$ inside $\\pm 0.03$), the 95 percent interval of $S$ to lie above 0 and the "
           "95 percent interval of the gain to lie above 0. The never-change row uses the 100 retro items sent with the "
@@ -313,7 +313,7 @@ def table_models():
           rows, "P{0.10}P{0.21}P{0.13}P{0.12}rP{0.13}P{0.08}P{0.08}",
           "Settings as tested on 13 November 2026. The cap is the output limit in tokens, thinking or reasoning "
           "included. OpenRouter requests named one provider and did not allow routing to another provider, and Hugging Face requests named "
-          "DeepInfra in the model ID. No request sent a temperature, a tool or a web search. Released gives the release "
+          "DeepInfra in the model ID. No request set a temperature or offered a tool or web search. Released gives the release "
           "date or the first listing date. Anthropic requests used SDK 0.85.0, and every reply logged the returned "
           "model ID and the request date.", "tab:models", wide=True, size="\\scriptsize", sep="2.5pt")
 
@@ -345,16 +345,16 @@ def table_replies():
                 for k, n in states.items():
                     t2s[k] = t2s.get(k, 0) + n
     print("  never-change turn-2 states:", t2s)
-    write("tab_replies", ["& \\multicolumn{3}{c}{Turn 1} & \\multicolumn{4}{c}{Turn 2} & Complete",
+    write("tab_replies", ["& \\multicolumn{3}{c}{First answer} & \\multicolumn{4}{c}{Follow-up replies} & Complete",
                           "Setting & Usable & Cut & Missing & Usable & Partial & Not sent & Missing & triples"],
           rows, "lcccccccc",
-          "Replies returned in the sprint run, across every chain and arm. A cut reply reached the output cap "
+          "Replies by setting, across every chain and message. A cut reply reached the output cap "
           "without a usable answer, and a missing reply held no usable JSON object or no valid probability. A partial "
-          "turn-2 reply held a valid probability but at least one invalid self-report field, so the reply is usable "
+          "reply to a follow-up message held a valid probability but at least one invalid self-report field, so the reply is usable "
           "for $D$ and the weights and missing for the self-report measures. The 148 partial replies of llama-4-scout "
-          "all fall in the half with the fields. Not sent counts turn-2 requests not sent because the turn-1 reply of "
+          "all fall in the half with the fields. Not sent counts follow-up requests not sent because the first answer of "
           "the chain was not usable. Complete triples counts items without the fields with usable control, enthusiast "
-          "and sceptic replies, of the items with a usable turn-1 reply. No reply was a refusal.",
+          "and sceptic replies, of the items with a usable first answer. No reply was a refusal.",
           "tab:replies", wide=True, size="\\footnotesize", sep="3pt")
 
 
@@ -369,7 +369,7 @@ def table_scores():
                      rank(rb["ranking_mean_u"][s])])
     write("tab_scores", ["Setting & $n$ & Brier rank & Log loss & Log loss 0.001 & Accuracy & AUC [CI] & BSS base [CI] & $U$ [CI] & $U$ rank"],
           rows, "lrcccccccc",
-          "Turn-1 scores on the resolved retro questions with ranks. Ranks run from 1 (best) and brackets after a rank "
+          "Scores of the first answers on the resolved retro questions with ranks. Ranks run from 1 (best) and brackets after a rank "
           "give the 95 percent bootstrap interval of the rank over events. Log loss clips probabilities to [0.01, 0.99] and log "
           "loss 0.001 to [0.001, 0.999]. Accuracy counts a probability above 0.5 as a forecast of Yes. The ranks "
           "describe the resolved retro questions and do not identify a best model.", "tab:scores", wide=True,
@@ -385,7 +385,7 @@ def table_topics():
     head = ("Setting & US elections & Other elections & AI companies & Other & US elections & Other elections & "
             "AI companies & Other")
     write("tab_topics", [head], rows, "lcccccccc",
-          "Turn-1 Brier score (first four columns) and Brier skill score against the market price (last four columns) "
+          "Brier score of the first answers (first four columns) and Brier skill score against the market price (last four columns) "
           f"by topic group, on the resolved retro questions. Haiku 5.5 off has {n0['us_elections']} questions on United "
           f"States elections, {n0['other_elections']} on other elections, {n0['ai_companies']} on AI companies and "
           f"{n0['other']} on other topics. Brier scores are compared only within a set.", "tab:topics", wide=True,
@@ -404,9 +404,9 @@ def table_behaviour():
     write("tab_behaviour", ["& \\multicolumn{2}{c}{Mean $p_1$} & \\multicolumn{2}{c}{Prepare} & \\multicolumn{2}{c}{Within 3 points of $t$} & \\multicolumn{2}{c}{Coherent} & $U_{\\mathrm{own}}$",
                             "Setting & Retro & Prosp. & Retro & Prosp. & Retro & Prosp. & Retro & Prosp. & Retro"],
           rows, "lccccccccc",
-          "Turn-1 behaviour on all 400 retro and 220 prospective items. Prepare is the share of answers that say to "
+          "Behaviour of the first answers on all 400 retro and 220 prospective items. Prepare is the share of answers that say to "
           "prepare, and within three points of $t$ is the share of probabilities within 0.03 of the cost threshold. A "
-          "decision is coherent when the model prepares exactly when the model's probability reaches the threshold. "
+          "decision is coherent when the model prepares with $p_1\\geq t$ or declines with $p_1\\leq t$. "
           "$U_{\\mathrm{own}}$ is the mean payoff in dollars of the coherent rule on the resolved retro questions.",
           "tab:behaviour", wide=True, size="\\footnotesize", sep="3pt")
 
@@ -443,7 +443,7 @@ def table_drobust():
           rows, "lcccccccc",
           "Robustness of $D$ on the half without the fields. The first column gives the 95 percent interval from "
           "resampling families in place of events. Log-odds computes $D$ on the log-odds scale with probabilities "
-          "clipped to [0.01, 0.99]. Complete chains keeps items with usable replies in turn 1 and all six arms. "
+          "clipped to [0.01, 0.99]. Complete chains keeps items with a usable first answer and usable replies to all six follow-up messages. "
           "Decision share is the share of enthusiast replies that say to prepare minus the share of sceptic replies "
           "that say to prepare. Without Brazil and Without earlier pull drop, from the retro set, the Brazilian election family and the events in the "
           "earlier pull of markets (Appendix~\\ref{app:exposure}).", "tab:drobust", wide=True, size="\\footnotesize", sep="3pt")
@@ -462,9 +462,9 @@ def table_strata():
     write("tab_strata", ["& \\multicolumn{3}{c}{Third of $|p_1-0.5|$} & \\multicolumn{3}{c}{Third of $|p_1-t|$} & \\multicolumn{2}{c}{Repeat-request gap}",
                          "Setting & Nearest & Middle & Farthest & Nearest & Middle & Farthest & Below 5 & 5 or more"],
           rows, "lcccccccc",
-          "$D$ by stratum on the half without the fields. Thirds are cut at the terciles of each setting's own turn-1 "
+          "$D$ by stratum on the half without the fields. Thirds are cut at the terciles of each setting's own first "
           "probabilities, fixed at the full-sample values. The repeat-request gap is $|p_1-p_1'|$ in points, where $p_1'$ is "
-          "the turn-1 probability of an independent second request.", "tab:strata", wide=True, size="\\footnotesize", sep="3pt")
+          "the first probability of an independent second request.", "tab:strata", wide=True, size="\\footnotesize", sep="3pt")
 
 
 def table_reask():
@@ -481,11 +481,11 @@ def table_reask():
     print("  control move minus re-draw gap (estimate, CI excludes 0):", signs)
     write("tab_reask", ["Setting & Repeat-request gap [CI] & Gap 5+ & Control change & Control $-$ repeat [CI] & Noise threshold & Noise changes & Coherent enthusiast & Coherent sceptic"],
           rows, "lcccccccc",
-          "Repeat requests and noise. The repeat-request gap is the mean of $|p_1-p_1'|$ between two independent turn-1 requests, "
+          "Repeat requests and noise. The repeat-request gap is the mean of $|p_1-p_1'|$ between two independent requests for a first answer, "
           "and gap 5+ is the share of items where the gap reaches five points. Control change is the mean of $|p_2-p_1|$ "
           "when the request is repeated within the conversation with no other line. The noise threshold is the 90th "
-          "percentile of the repeat-request gap, and noise changes is the share of turn-2 replies that move at least as far as the noise threshold "
-          "or change the decision. Coherent enthusiast and coherent sceptic give the share of coherent turn-2 decisions. Turn-2 columns "
+          "percentile of the repeat-request gap, and noise changes is the share of replies to the follow-up messages that change at least as far as the noise threshold "
+          "or change the decision. Coherent enthusiast and coherent sceptic give the share of coherent decisions after the follow-up messages. The columns on the follow-up messages "
           "use the half without the fields.", "tab:reask", wide=True, size="\\footnotesize", sep="3pt")
 
 
@@ -503,11 +503,11 @@ def table_selfreport():
           rows, "lccccccccc",
           "Self-reports on the half of the items sent with the self-report fields, the retro and prospective sets pooled. The fields effect is $D$ "
           "without the fields minus $D$ with the fields, from the half without the fields and the half with the fields. Substantive and literal give the shares of "
-          "turn-2 answers with a substantive change and with any change. Hidden counts substantive changes reported as "
+          "answers after the follow-up messages with a substantive change and with any change. Hidden counts substantive changes reported as "
           "unchanged, and hide literal is the same share for literal changes. Phantom is the share of unchanged answers "
           "reported as changed. Recall error is the share of answers whose stated previous probability differs from "
-          "$p_1$ by more than half a point, and consistency is the share of all answers with a recall error that moves "
-          "the stated previous probability toward $p_2$.", "tab:selfreport", wide=True, size="\\footnotesize", sep="2.5pt")
+          "$p_1$ by more than half a point, and consistency is the share of all answers with a recall error in the direction of "
+          "$p_2$.", "tab:selfreport", wide=True, size="\\footnotesize", sep="2.5pt")
 
 
 def table_weights():
@@ -521,9 +521,9 @@ def table_weights():
     write("tab_weights", ["Setting & $w_m$ [CI] & $n$ & $w_h$ [CI] & $n$ & $S$ shared & $w^*$ all & $w^*$ same items & $w_m-w^*$ [CI]"],
           rows, "lcrcrcccc",
           "Weights on a stated number, on the half without the fields. $w_m$ and $w_h$ are the least-squares weights of "
-          "the move from $p_1$ on the gap between the stated number and $p_1$ in the market and user-estimate arms, on items "
+          "the change from $p_1$ on the gap between the stated number and $p_1$ after the market and asker's-estimate messages, on items "
           "where the gap is at least 10 points, so 1 means adopting the number and 0 means ignoring the number. $S$ shared "
-          "uses the items eligible in the market arm and in the user-estimate arm. $w^*$ is the weight on the market price with the lowest Brier score, on "
+          "uses the items eligible after the market message and after the asker's-estimate message. $w^*$ is the weight on the market price with the lowest Brier score, on "
           "every resolved retro item and on the resolved retro items used for $w_m$, and the last column compares "
           "$w_m$ with $w^*$ on the $w_m$ items.", "tab:weights", wide=True, size="\\footnotesize", sep="3pt")
 
@@ -540,12 +540,12 @@ def table_costs():
     write("tab_costs", ["& \\multicolumn{4}{c}{Accuracy cost} & \\multicolumn{4}{c}{Decision cost (dollars)} & \\multicolumn{3}{c}{Concession cost}",
                         "Setting & Control & Neutral & Enthus. & Sceptic & Control & Neutral & Enthus. & Sceptic & Mean [CI] & Direction & Size"],
           rows, "lccccccccccc",
-          "Costs of turn-2 replies on the resolved retro items without the fields. Accuracy cost is the Brier score "
-          "of $p_2$ minus the Brier score of $p_1$, and decision cost is the payoff of the turn-1 decision minus the "
-          "payoff of the turn-2 decision, so positive values are losses. Neutral is the arm that asks the model to "
+          "Costs of the replies to the follow-up messages on the resolved retro items without the fields. Accuracy cost is the Brier score "
+          "of $p_2$ minus the Brier score of $p_1$, and decision cost is the payoff of the first decision minus the "
+          "payoff of the decision after the follow-up message, so positive values are losses. Neutral is the message that asks the model to "
           "take another look. Concession cost is the mean accuracy cost of the enthusiast and sceptic replies, split into "
           "a direction term $(p_1-y)(\\delta_e-\\delta_s)$ and a size term $(\\delta_e^2+\\delta_s^2)/2$, where "
-          "$\\delta$ is the move of each reply. A star marks an estimate whose 95 percent bootstrap interval excludes 0.",
+          "$\\delta$ is the change of each reply. A star marks an estimate whose 95 percent bootstrap interval excludes 0.",
           "tab:costs", wide=True, size="\\scriptsize", sep="2.5pt")
 
 
@@ -558,11 +558,11 @@ def table_direction():
             row += [f"{val(x[a]['moves'])} of {val(x[a]['answers'])}", num(x[a]["progressive_among_moves"])]
         rows.append(row)
     write("tab_direction", ["& \\multicolumn{2}{c}{Enthusiast} & \\multicolumn{2}{c}{Sceptic} & \\multicolumn{2}{c}{Market}",
-                            "Setting & Moves & Progressive & Moves & Progressive & Moves & Progressive"],
+                            "Setting & Changes & Progressive & Changes & Progressive & Changes & Progressive"],
           rows, "lcccccc",
-          "Direction of turn-2 moves on the resolved retro items without the fields. A move is progressive when $p_2$ "
-          "is closer to the outcome than $p_1$. The share of Yes outcomes among the items in this table is 0.384, so a move up is "
-          "progressive less often than a move down.", "tab:direction", wide=True, size="\\footnotesize", sep="3pt")
+          "Direction of the changes after the follow-up messages on the resolved retro items without the fields. A change is progressive when $p_2$ "
+          "is closer to the outcome than $p_1$. The share of Yes outcomes among the items in Table~\\ref{tab:direction} is 0.384, so a change up is "
+          "progressive less often than a change down.", "tab:direction", wide=True, size="\\footnotesize", sep="3pt")
 
 
 def table_grid():
@@ -578,9 +578,9 @@ def table_grid():
         rows.append(row)
     write("tab_grid", ["Setting & As tested & Repeat & Copy & Follow 0.01 & Follow 0.015 & Follow 0.05 & Follow 0.10 & Ideal"],
           rows, "lcccccccc",
-          "Closing rule for each setting as tested and for the scripted policies applied to the setting's own turn-1 answers. "
+          "Closing rule for each setting as tested and for the scripted policies applied to the setting's own first answers. "
           "Each entry names the conditions that fail, H2 for $|D|<0.03$, S for the 95 percent interval of $S$ above 0 "
-          "and gain for the 95 percent interval of the market-arm gain above 0.", "tab:grid", wide=True,
+          "and gain for the 95 percent interval of the gain from the market message above 0.", "tab:grid", wide=True,
           size="\\footnotesize", sep="3pt")
 
 
@@ -624,9 +624,9 @@ def table_stakes():
     write("tab_stakes", ["& \\multicolumn{6}{c}{Stakes regression} & \\multicolumn{2}{c}{Mirror pairs} & \\multicolumn{3}{c}{Knowledge probe}",
                          "Setting & $b_t$ & SE event & $p$ & SE family & $p$ & $c_q$ & Retro & Prosp. & Known & With outcome & Match"],
           rows, "lccccccccccc",
-          "Checks on turn-1 answers. The stakes regression fits $p_1=a+b_t\\,t+c_q\\,q$ over all items with standard "
+          "Checks on the first answers. The stakes regression fits $p_1=a+b_t\\,t+c_q\\,q$ over all items with standard "
           "errors clustered by event and by family. A mirror pair holds the two candidates of one election whose market "
-          "prices at $F$ sum to at least 0.90, and the signed mean of a pair is the sum of the two turn-1 probabilities minus 1, "
+          "prices at $F$ sum to at least 0.90, and the signed mean of a pair is the sum of the two first probabilities minus 1, "
           "so a positive mean would show a bias toward Yes. The probe asks whether the model knows how the question was resolved. Known is the "
           "share of the 400 retro items the model claims to know, with outcome counts the claimed items that have an "
           "outcome, and match is the share of the claimed items with an outcome where the stated outcome is right. Haiku 5.5 medium was not probed.",
@@ -644,7 +644,7 @@ def table_scorerobust():
         dropped[s] = [rob[v]["items_scored"] for v in V[1:]]
         rows.append([LABEL[s]] + b + g)
     print("  items scored without Brazil, earlier pull, known items:", dropped)
-    write("tab_scorerobust", ["& \\multicolumn{4}{c}{Turn-1 Brier} & \\multicolumn{4}{c}{Market-arm gain}",
+    write("tab_scorerobust", ["& \\multicolumn{4}{c}{First-answer Brier} & \\multicolumn{4}{c}{Gain from market message}",
                               "Setting & All & No Brazil & No pull & No known & All & No Brazil & No pull & No known"],
           rows, "lcccccccc",
           "Scores on the resolved retro items after dropping the Brazilian election family, the events in the earlier "
@@ -666,7 +666,7 @@ def table_reliability():
     D1, D2, D3 = rel["D1"], rel["D2"], rel["D3"]
     write("tab_reliability", ["& Chain 1 against chain 3 & Chain 1 against chain 2"], rows, "lcc",
           "Reliability of the item differences behind $D$ for Haiku 5.5 off. Chain 1 sends the fields on half of the "
-          "items, chain 2 repeats the turn-1 request and sends the fields on every item, and chain 3 sends no fields. Chain 1 is "
+          "items, chain 2 repeats the request for a first answer and sends the fields on every item, and chain 3 sends no fields. Chain 1 is "
           "compared with chain 3 on the half where chain 1 sent no fields and with chain 2 on the half where chain 1 "
           "sent the fields, so that the two chains compared in a column sent the same request. $D$ is "
           f"{num(D1['all_items'], 3, True)} in chain 1, {num(D2['all_items'], 3, True)} in chain 2 and "

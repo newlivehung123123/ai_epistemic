@@ -5,7 +5,7 @@
 \begin{adjustbox}{max width=\linewidth}
 \begin{tabular}{lcccccccc}
 \toprule
-& \multicolumn{3}{c}{Turn 1} & \multicolumn{4}{c}{Turn 2} & Complete \\
+& \multicolumn{3}{c}{First answer} & \multicolumn{4}{c}{Follow-up replies} & Complete \\
 Setting & Usable & Cut & Missing & Usable & Partial & Not sent & Missing & triples \\
 \midrule
 Haiku 5.5 off & 1860 of 1860 & 0 & 0 & 11156 of 11160 & 4 & 0 & 0 & 310 of 310 \\
@@ -22,6 +22,6 @@ llama-4-scout & 1240 of 1240 & 0 & 0 & 3571 of 3720 & 148 & 0 & 1 & 310 of 310 \
 \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{Replies returned in the sprint run, across every chain and arm. A cut reply reached the output cap without a usable answer, and a missing reply held no usable JSON object or no valid probability. A partial turn-2 reply held a valid probability but at least one invalid self-report field, so the reply is usable for $D$ and the weights and missing for the self-report measures. The 148 partial replies of llama-4-scout all fall in the half with the fields. Not sent counts turn-2 requests not sent because the turn-1 reply of the chain was not usable. Complete triples counts items without the fields with usable control, enthusiast and sceptic replies, of the items with a usable turn-1 reply. No reply was a refusal.}
+\caption{Replies by setting, across every chain and message. A cut reply reached the output cap without a usable answer, and a missing reply held no usable JSON object or no valid probability. A partial reply to a follow-up message held a valid probability but at least one invalid self-report field, so the reply is usable for $D$ and the weights and missing for the self-report measures. The 148 partial replies of llama-4-scout all fall in the half with the fields. Not sent counts follow-up requests not sent because the first answer of the chain was not usable. Complete triples counts items without the fields with usable control, enthusiast and sceptic replies, of the items with a usable first answer. No reply was a refusal.}
 \label{tab:replies}
 \end{table*}

@@ -22,6 +22,6 @@ llama-4-scout & .0082 & .0204$^{*}$ & $-.0110$ & .0349$^{*}$ & $-1.04$ & $-3.61$
 \bottomrule
 \end{tabular}
 \end{adjustbox}
-\caption{Costs of turn-2 replies on the resolved retro items without the fields. Accuracy cost is the Brier score of $p_2$ minus the Brier score of $p_1$, and decision cost is the payoff of the turn-1 decision minus the payoff of the turn-2 decision, so positive values are losses. Neutral is the arm that asks the model to take another look. Concession cost is the mean accuracy cost of the enthusiast and sceptic replies, split into a direction term $(p_1-y)(\delta_e-\delta_s)$ and a size term $(\delta_e^2+\delta_s^2)/2$, where $\delta$ is the move of each reply. A star marks an estimate whose 95 percent bootstrap interval excludes 0.}
+\caption{Costs of the replies to the follow-up messages on the resolved retro items without the fields. Accuracy cost is the Brier score of $p_2$ minus the Brier score of $p_1$, and decision cost is the payoff of the first decision minus the payoff of the decision after the follow-up message, so positive values are losses. Neutral is the message that asks the model to take another look. Concession cost is the mean accuracy cost of the enthusiast and sceptic replies, split into a direction term $(p_1-y)(\delta_e-\delta_s)$ and a size term $(\delta_e^2+\delta_s^2)/2$, where $\delta$ is the change of each reply. A star marks an estimate whose 95 percent bootstrap interval excludes 0.}
 \label{tab:costs}
 \end{table*}
